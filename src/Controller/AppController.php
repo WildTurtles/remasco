@@ -46,8 +46,8 @@ class AppController extends Controller
 				$this->loadComponent('Auth', [
             'authError' => 'Did you really think you are allowed to see that?',
         		'loginRedirect' => [
-            	'controller' => 'Users',
-            	'action' => 'viewProfile'
+            	'controller' => 'Topics',
+            	'action' => 'indexGroup'
         		],
             'logoutRedirect' => [
                 'controller' => 'Users',

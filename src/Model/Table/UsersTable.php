@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Users Model
@@ -114,4 +115,57 @@ class UsersTable extends Table
 
         return $rules;
     }
+
+		public function validationPassword(Validator $validator)
+    {
+        $validator
+                ->add('old_password','custom',[
+                    'rule' => function($value, $context){
+                        $user = $this->get($context['data']['id']);
+                        if($user)
+                        {
+                            if((new DefaultPasswordHasher)->check($value, $user->password))
+                            {
+                                return true;
+                            }
+                        }
+                        return false;
+                    },
+                    'message' => 'Your old password does not match the entered password!',
+                ])
+                ->notEmpty('old_password');
+
+        $validator
+                ->add('new_password',[
+                    'length' => [
+                        'rule' => ['minLength',4],
+                        'message' => 'Please enter atleast 4 characters in password your password.'
+                    ]
+                ])
+                ->add('new_password',[
+                    'match' => [
+                        'rule' => ['compareWith','confirm_password'],
+                        'message' => 'Sorry! Password dose not match. Please try again!'
+                    ]
+                ])
+                ->notEmpty('new_password');
+
+        $validator
+                ->add('confirm_password',[
+                    'length' => [
+                        'rule' => ['minLength',4],
+                        'message' => 'Please enter atleast 4 characters in password your password.'
+                    ]
+                ])
+                ->add('confirm_password',[
+                    'match' => [
+                        'rule' => ['compareWith','new_password'],
+                        'message' => 'Sorry! Password dose not match. Please try again!'
+                    ]
+                ])
+                ->notEmpty('confirm_password');
+
+        return $validator;
+    }
+
 }

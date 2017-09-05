@@ -118,7 +118,7 @@ class ChaptersController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function addfrom($topicId = null)
+    public function addFrom($topicId = null)
     {
         $chapter = $this->Chapters->newEntity();
         if ($this->request->is('post')) {

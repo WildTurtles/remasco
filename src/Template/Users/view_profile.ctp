@@ -4,13 +4,9 @@
   * @var \App\Model\Entity\User $user
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-				<li><?= $this->Html->link(__('My Profile'), ['action' => 'viewProfile']) ?></li>
-				<li><?= $this->Html->link(__('My Topics'), ['controller' => 'Topics', 'action' => 'index-group']) ?></li>
-    </ul>
-</nav>
+
+<?php echo $this->element('menu'); ?>
+
 <div class="users view large-9 medium-8 columns content">
     <h3><?= h($user->name) ?></h3>
     <table class="vertical-table">
@@ -39,7 +35,8 @@
             <td><?= h($user->email) ?></td>
         </tr>
     </table>
-		<?= $this->Html->link(__('Edit my Profile'), ['action' => 'editProfile']) ?>
+		<?= $this->Html->link(__('Edit my Profile'), ['action' => 'editProfile']) ?></br>
+		<?= $this->Html->link(__('Change my password'), ['action' => 'changePassword']) ?>
     <div class="related">
         <h4><?= __('Related Tries') ?></h4>
         <?php if (!empty($user->tries)): ?>
