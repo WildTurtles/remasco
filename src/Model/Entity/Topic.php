@@ -7,13 +7,13 @@ use Cake\ORM\Entity;
  * Topic Entity
  *
  * @property string $id
- * @property int $name
+ * @property string $name
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $updated
- * @property string $usersid
  *
  * @property \App\Model\Entity\Group[] $groups
  * @property \App\Model\Entity\Chapter[] $chapters
+ * @property \App\Model\Entity\User[] $users
  */
 class Topic extends Entity
 {

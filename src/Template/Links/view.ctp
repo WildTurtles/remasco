@@ -24,11 +24,11 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Name') ?></th>
-            <td><?= $this->Number->format($link->name) ?></td>
+            <td><?= h($link->name) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Url') ?></th>
-            <td><?= $this->Number->format($link->url) ?></td>
+            <td><?= h($link->url) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>
@@ -45,21 +45,21 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Number') ?></th>
                 <th scope="col"><?= __('Path Id') ?></th>
                 <th scope="col"><?= __('Lock') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Updated') ?></th>
+                <th scope="col"><?= __('Name') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($link->steps as $steps): ?>
             <tr>
                 <td><?= h($steps->id) ?></td>
-                <td><?= h($steps->number) ?></td>
                 <td><?= h($steps->path_id) ?></td>
                 <td><?= h($steps->lock) ?></td>
                 <td><?= h($steps->created) ?></td>
                 <td><?= h($steps->updated) ?></td>
+                <td><?= h($steps->name) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Steps', 'action' => 'view', $steps->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Steps', 'action' => 'edit', $steps->id]) ?>

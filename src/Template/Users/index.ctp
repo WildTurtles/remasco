@@ -14,6 +14,8 @@
         <li><?= $this->Html->link(__('New Group'), ['controller' => 'Groups', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Paths'), ['controller' => 'Paths', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Path'), ['controller' => 'Paths', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Topics'), ['controller' => 'Topics', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Topic'), ['controller' => 'Topics', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
@@ -22,12 +24,13 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('fistname') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('avatar') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('pseudo') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('username') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('password') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('lastname') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('firstname') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('avatar') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('display_name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -35,12 +38,13 @@
             <?php foreach ($users as $user): ?>
             <tr>
                 <td><?= h($user->id) ?></td>
-                <td><?= h($user->name) ?></td>
-                <td><?= h($user->fistname) ?></td>
-                <td><?= h($user->avatar) ?></td>
-                <td><?= h($user->pseudo) ?></td>
-                <td><?= h($user->email) ?></td>
+                <td><?= h($user->username) ?></td>
                 <td><?= h($user->password) ?></td>
+                <td><?= h($user->lastname) ?></td>
+                <td><?= h($user->firstname) ?></td>
+                <td><?= h($user->avatar) ?></td>
+                <td><?= h($user->display_name) ?></td>
+                <td><?= h($user->email) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>

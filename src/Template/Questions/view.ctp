@@ -15,6 +15,8 @@
         <li><?= $this->Html->link(__('New Answer'), ['controller' => 'Answers', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Tries'), ['controller' => 'Tries', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Try'), ['controller' => 'Tries', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Multiple Choice Questions'), ['controller' => 'MultipleChoiceQuestions', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Multiple Choice Question'), ['controller' => 'MultipleChoiceQuestions', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="questions view large-9 medium-8 columns content">
@@ -91,6 +93,33 @@
                     <?= $this->Html->link(__('View'), ['controller' => 'Tries', 'action' => 'view', $tries->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Tries', 'action' => 'edit', $tries->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['controller' => 'Tries', 'action' => 'delete', $tries->id], ['confirm' => __('Are you sure you want to delete # {0}?', $tries->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Multiple Choice Questions') ?></h4>
+        <?php if (!empty($question->multiple_choice_questions)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Name') ?></th>
+                <th scope="col"><?= __('Created') ?></th>
+                <th scope="col"><?= __('Updated') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($question->multiple_choice_questions as $multipleChoiceQuestions): ?>
+            <tr>
+                <td><?= h($multipleChoiceQuestions->id) ?></td>
+                <td><?= h($multipleChoiceQuestions->name) ?></td>
+                <td><?= h($multipleChoiceQuestions->created) ?></td>
+                <td><?= h($multipleChoiceQuestions->updated) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'MultipleChoiceQuestions', 'action' => 'view', $multipleChoiceQuestions->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'MultipleChoiceQuestions', 'action' => 'edit', $multipleChoiceQuestions->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'MultipleChoiceQuestions', 'action' => 'delete', $multipleChoiceQuestions->id], ['confirm' => __('Are you sure you want to delete # {0}?', $multipleChoiceQuestions->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

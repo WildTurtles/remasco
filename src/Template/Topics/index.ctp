@@ -23,7 +23,6 @@
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('updated') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('usersid') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -31,10 +30,9 @@
             <?php foreach ($topics as $topic): ?>
             <tr>
                 <td><?= h($topic->id) ?></td>
-                <td><?= $this->Number->format($topic->name) ?></td>
+                <td><?= h($topic->name) ?></td>
                 <td><?= h($topic->created) ?></td>
                 <td><?= h($topic->updated) ?></td>
-                <td><?= h($topic->usersid) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $topic->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $topic->id]) ?>

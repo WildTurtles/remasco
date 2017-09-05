@@ -12,8 +12,8 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\AnswersQuestionsTable|\Cake\ORM\Association\BelongsToMany $AnswersQuestions
  * @property \App\Model\Table\MultipleChoiceQuestionsTable|\Cake\ORM\Association\BelongsToMany $MultipleChoiceQuestions
- * @property \App\Model\Table\QuestionsTable|\Cake\ORM\Association\BelongsToMany $Questions
  * @property \App\Model\Table\PathsTable|\Cake\ORM\Association\BelongsToMany $Paths
+ * @property \App\Model\Table\QuestionsTable|\Cake\ORM\Association\BelongsToMany $Questions
  *
  * @method \App\Model\Entity\Try get($primaryKey, $options = [])
  * @method \App\Model\Entity\Try newEntity($data = null, array $options = [])
@@ -58,15 +58,15 @@ class TriesTable extends Table
             'targetForeignKey' => 'multiple_choice_question_id',
             'joinTable' => 'multiple_choice_questions_tries'
         ]);
+        $this->belongsToMany('Paths', [
+            'foreignKey' => 'try_id',
+            'targetForeignKey' => 'path_id',
+            'joinTable' => 'paths_tries'
+        ]);
         $this->belongsToMany('Questions', [
             'foreignKey' => 'try_id',
             'targetForeignKey' => 'question_id',
             'joinTable' => 'questions_tries'
-        ]);
-        $this->belongsToMany('Paths', [
-            'foreignKey' => 'try_id',
-            'targetForeignKey' => 'path_id',
-            'joinTable' => 'tries_paths'
         ]);
     }
 

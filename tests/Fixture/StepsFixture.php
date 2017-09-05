@@ -18,11 +18,11 @@ class StepsFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'uuid', 'length' => null, 'default' => null, 'null' => false, 'comment' => null, 'precision' => null],
-        'number' => ['type' => 'integer', 'length' => 10, 'default' => null, 'null' => true, 'comment' => null, 'precision' => null, 'unsigned' => null, 'autoIncrement' => null],
         'path_id' => ['type' => 'uuid', 'length' => null, 'default' => null, 'null' => false, 'comment' => null, 'precision' => null],
-        'lock' => ['type' => 'boolean', 'length' => null, 'default' => null, 'null' => true, 'comment' => null, 'precision' => null],
+        'lock' => ['type' => 'boolean', 'length' => null, 'default' => 0, 'null' => true, 'comment' => null, 'precision' => null],
         'created' => ['type' => 'timestamp', 'length' => null, 'default' => null, 'null' => true, 'comment' => null, 'precision' => null],
         'updated' => ['type' => 'timestamp', 'length' => null, 'default' => null, 'null' => true, 'comment' => null, 'precision' => null],
+        'number' => ['type' => 'integer', 'length' => 10, 'default' => null, 'null' => true, 'comment' => null, 'precision' => null, 'unsigned' => null, 'autoIncrement' => null],
         '_indexes' => [
             'steps_path_id' => ['type' => 'index', 'columns' => ['path_id'], 'length' => []],
         ],
@@ -41,12 +41,12 @@ class StepsFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => 'c858b5ba-1a05-455e-b463-219e541e540c',
-            'number' => 1,
-            'path_id' => '54b2f882-4f79-41de-b841-dbad0a1f282f',
+            'id' => '820843a3-0009-4476-a5a8-73173ca9d10d',
+            'path_id' => '495e5863-74e0-4019-b4fc-d595ff242ab3',
             'lock' => 1,
-            'created' => 1501767480,
-            'updated' => 1501767480
+            'created' => 1502710208,
+            'updated' => 1502710208,
+            'number' => 1
         ],
     ];
 }

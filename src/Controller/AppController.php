@@ -43,13 +43,25 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+				$this->loadComponent('Auth', [
+            'authError' => 'Did you really think you are allowed to see that?',
+        		'loginRedirect' => [
+            	'controller' => 'Users',
+            	'action' => 'viewProfile'
+        		],
+            'logoutRedirect' => [
+                'controller' => 'Users',
+                'action' => 'login'
+            ]
+        ]);
+
 
         /*
          * Enable the following components for recommended CakePHP security settings.
          * see http://book.cakephp.org/3.0/en/controllers/components/security.html
          */
-        //$this->loadComponent('Security');
-        //$this->loadComponent('Csrf');
+        $this->loadComponent('Security');
+        $this->loadComponent('Csrf');
     }
 
     /**
@@ -66,4 +78,22 @@ class AppController extends Controller
             $this->set('_serialize', true);
         }
     }
+
+    public function beforeFilter(Event $event)
+    {
+        $this->Auth->allow(['index', 'view', 'edit', 'add','delete' ,'display', 'addfrom']);
+    }
+
+   public function isAuthorized($user)
+   {
+    // Default deny
+//    $result = false;
+    // Admin can access every action TODO edit to be compliante
+    if (isset($user['role']) && $user['role'] === 'admin') {
+        $result = true;
+    }
+        $result = true;
+
+    return result;
+  }
 }

@@ -36,7 +36,7 @@ class QuestionsController extends AppController
     public function view($id = null)
     {
         $question = $this->Questions->get($id, [
-            'contain' => ['Answers', 'Tries']
+            'contain' => ['Answers', 'Tries', 'MultipleChoiceQuestions']
         ]);
 
         $this->set('question', $question);
@@ -62,7 +62,8 @@ class QuestionsController extends AppController
         }
         $answers = $this->Questions->Answers->find('list', ['limit' => 200]);
         $tries = $this->Questions->Tries->find('list', ['limit' => 200]);
-        $this->set(compact('question', 'answers', 'tries'));
+        $multipleChoiceQuestions = $this->Questions->MultipleChoiceQuestions->find('list', ['limit' => 200]);
+        $this->set(compact('question', 'answers', 'tries', 'multipleChoiceQuestions'));
         $this->set('_serialize', ['question']);
     }
 
@@ -76,7 +77,7 @@ class QuestionsController extends AppController
     public function edit($id = null)
     {
         $question = $this->Questions->get($id, [
-            'contain' => ['Answers', 'Tries']
+            'contain' => ['Answers', 'Tries', 'MultipleChoiceQuestions']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $question = $this->Questions->patchEntity($question, $this->request->getData());
@@ -89,7 +90,8 @@ class QuestionsController extends AppController
         }
         $answers = $this->Questions->Answers->find('list', ['limit' => 200]);
         $tries = $this->Questions->Tries->find('list', ['limit' => 200]);
-        $this->set(compact('question', 'answers', 'tries'));
+        $multipleChoiceQuestions = $this->Questions->MultipleChoiceQuestions->find('list', ['limit' => 200]);
+        $this->set(compact('question', 'answers', 'tries', 'multipleChoiceQuestions'));
         $this->set('_serialize', ['question']);
     }
 

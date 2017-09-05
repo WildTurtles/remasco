@@ -11,6 +11,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\GroupsTable|\Cake\ORM\Association\BelongsToMany $Groups
  * @property \App\Model\Table\ChaptersTable|\Cake\ORM\Association\BelongsToMany $Chapters
+ * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsToMany $Users
  *
  * @method \App\Model\Entity\Topic get($primaryKey, $options = [])
  * @method \App\Model\Entity\Topic newEntity($data = null, array $options = [])
@@ -51,6 +52,11 @@ class TopicsTable extends Table
             'targetForeignKey' => 'chapter_id',
             'joinTable' => 'topics_chapters'
         ]);
+        $this->belongsToMany('Users', [
+            'foreignKey' => 'topic_id',
+            'targetForeignKey' => 'user_id',
+            'joinTable' => 'topics_users'
+        ]);
     }
 
     /**
@@ -67,13 +73,7 @@ class TopicsTable extends Table
             ->add('id', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
-            ->integer('name')
             ->allowEmpty('name');
-
-        $validator
-            ->uuid('usersid')
-            ->requirePresence('usersid', 'create')
-            ->notEmpty('usersid');
 
         return $validator;
     }

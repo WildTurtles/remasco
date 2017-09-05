@@ -61,11 +61,9 @@ class LinksTable extends Table
             ->add('id', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
-            ->integer('name')
             ->allowEmpty('name');
 
         $validator
-            ->integer('url')
             ->allowEmpty('url');
 
         return $validator;

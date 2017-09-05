@@ -25,7 +25,6 @@
         <legend><?= __('Edit Topic') ?></legend>
         <?php
             echo $this->Form->control('name');
-            echo $this->Form->control('usersid');
             echo $this->Form->control('groups._ids', ['options' => $groups]);
             echo $this->Form->control('chapters._ids', ['options' => $chapters]);
         ?>

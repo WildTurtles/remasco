@@ -3,6 +3,8 @@
   * @var \App\View\AppView $this
   * @var \App\Model\Entity\Chapter $chapter
   */
+
+debug($chapter);
 ?>
 
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
@@ -14,11 +16,11 @@
 </nav>
 
 <div class="chapters edit large-9 medium-8 columns content">
-	<?= $this->Html->link(__('Add a path'), ['action' => 'addfrom', $chapter->id]) ?>
+	<?= $this->Html->link(__('Add a path'), ['action' => 'addfrom', $chapter->paths->chapters->id]) ?>
 </div>
 
 <div class="chapters view large-9 medium-8 columns content">
-  <h3><?= h($chapter->name) ?></h3>
+  <h3><?= h($chapter->paths->chapters->name) ?></h3>
   <div class="related">
     <h4><?= __('Related Paths') ?></h4>
     <?php if (!empty($chapter->paths)): ?>

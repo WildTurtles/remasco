@@ -35,7 +35,7 @@ class GroupsFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => '9595a51c-a245-41a1-9438-5d7cb8df3713',
+            'id' => '2174873a-4c1d-4eb5-87bb-12205e1056a9',
             'name' => 'Lorem ipsum dolor sit a',
             'is_deletable' => 1
         ],

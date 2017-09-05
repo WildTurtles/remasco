@@ -54,12 +54,12 @@ class PathsTable extends Table
         $this->belongsToMany('Tries', [
             'foreignKey' => 'path_id',
             'targetForeignKey' => 'try_id',
-            'joinTable' => 'tries_paths'
+            'joinTable' => 'paths_tries'
         ]);
         $this->belongsToMany('Users', [
             'foreignKey' => 'path_id',
             'targetForeignKey' => 'user_id',
-            'joinTable' => 'users_paths'
+            'joinTable' => 'paths_users'
         ]);
     }
 

@@ -19,6 +19,8 @@
         <li><?= $this->Html->link(__('New Group'), ['controller' => 'Groups', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Paths'), ['controller' => 'Paths', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Path'), ['controller' => 'Paths', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Topics'), ['controller' => 'Topics', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Topic'), ['controller' => 'Topics', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="users form large-9 medium-8 columns content">
@@ -26,14 +28,16 @@
     <fieldset>
         <legend><?= __('Edit User') ?></legend>
         <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('fistname');
-            echo $this->Form->control('avatar');
-            echo $this->Form->control('pseudo');
-            echo $this->Form->control('email');
+            echo $this->Form->control('username');
             echo $this->Form->control('password');
+            echo $this->Form->control('lastname');
+            echo $this->Form->control('firstname');
+            echo $this->Form->control('avatar');
+            echo $this->Form->control('display_name');
+            echo $this->Form->control('email');
             echo $this->Form->control('groups._ids', ['options' => $groups]);
             echo $this->Form->control('paths._ids', ['options' => $paths]);
+            echo $this->Form->control('topics._ids', ['options' => $topics]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

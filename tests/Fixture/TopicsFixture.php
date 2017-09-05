@@ -18,10 +18,9 @@ class TopicsFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'uuid', 'length' => null, 'default' => null, 'null' => false, 'comment' => null, 'precision' => null],
-        'name' => ['type' => 'integer', 'length' => 10, 'default' => null, 'null' => true, 'comment' => null, 'precision' => null, 'unsigned' => null, 'autoIncrement' => null],
+        'name' => ['type' => 'string', 'length' => 50, 'default' => null, 'null' => true, 'collate' => null, 'comment' => null, 'precision' => null, 'fixed' => null],
         'created' => ['type' => 'timestamp', 'length' => null, 'default' => null, 'null' => true, 'comment' => null, 'precision' => null],
         'updated' => ['type' => 'timestamp', 'length' => null, 'default' => null, 'null' => true, 'comment' => null, 'precision' => null],
-        'usersid' => ['type' => 'uuid', 'length' => null, 'default' => null, 'null' => false, 'comment' => null, 'precision' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
             'topics_id' => ['type' => 'unique', 'columns' => ['id'], 'length' => []],
@@ -36,11 +35,10 @@ class TopicsFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => 'ded00948-f11c-41a4-a01b-e0fe2fbc4b38',
-            'name' => 1,
-            'created' => 1501767451,
-            'updated' => 1501767451,
-            'usersid' => '0a591c74-2d5e-4842-93d6-45e2214a7fe7'
+            'id' => '51376ae0-ec57-42de-bbd0-1958721dadd8',
+            'name' => 'Lorem ipsum dolor sit amet',
+            'created' => 1503940760,
+            'updated' => 1503940760
         ],
     ];
 }

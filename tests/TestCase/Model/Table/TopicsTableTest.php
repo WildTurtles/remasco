@@ -41,8 +41,8 @@ class TopicsTableTest extends TestCase
         'app.chapters',
         'app.chapters_paths',
         'app.topics_chapters',
-        'app.tries_paths',
-        'app.users_paths',
+        'app.paths_tries',
+        'app.paths_users',
         'app.links',
         'app.links_steps',
         'app.multiple_choice_questions_steps',
@@ -50,7 +50,8 @@ class TopicsTableTest extends TestCase
         'app.expected_answers',
         'app.opened_questions_steps',
         'app.multiple_choice_questions_tries',
-        'app.groups_users'
+        'app.groups_users',
+        'app.topics_users'
     ];
 
     /**

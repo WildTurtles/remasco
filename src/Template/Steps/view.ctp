@@ -22,7 +22,7 @@
     </ul>
 </nav>
 <div class="steps view large-9 medium-8 columns content">
-    <h3><?= h($step->id) ?></h3>
+    <h3><?= h($step->Number) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Id') ?></th>

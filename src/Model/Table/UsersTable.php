@@ -12,6 +12,7 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\TriesTable|\Cake\ORM\Association\HasMany $Tries
  * @property \App\Model\Table\GroupsTable|\Cake\ORM\Association\BelongsToMany $Groups
  * @property \App\Model\Table\PathsTable|\Cake\ORM\Association\BelongsToMany $Paths
+ * @property |\Cake\ORM\Association\BelongsToMany $Topics
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
  * @method \App\Model\Entity\User newEntity($data = null, array $options = [])
@@ -49,7 +50,12 @@ class UsersTable extends Table
         $this->belongsToMany('Paths', [
             'foreignKey' => 'user_id',
             'targetForeignKey' => 'path_id',
-            'joinTable' => 'users_paths'
+            'joinTable' => 'paths_users'
+        ]);
+        $this->belongsToMany('Topics', [
+            'foreignKey' => 'user_id',
+            'targetForeignKey' => 'topic_id',
+            'joinTable' => 'topics_users'
         ]);
     }
 
@@ -67,24 +73,27 @@ class UsersTable extends Table
             ->add('id', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
-            ->allowEmpty('name');
+            ->allowEmpty('username');
 
         $validator
-            ->allowEmpty('fistname');
+            ->allowEmpty('password');
+
+        $validator
+            ->allowEmpty('lastname');
+
+        $validator
+            ->allowEmpty('firstname');
 
         $validator
             ->allowEmpty('avatar');
 
         $validator
-            ->allowEmpty('pseudo')
-            ->add('pseudo', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->allowEmpty('display_name')
+            ->add('display_name', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->email('email')
             ->allowEmpty('email');
-
-        $validator
-            ->allowEmpty('password');
 
         return $validator;
     }
@@ -98,9 +107,10 @@ class UsersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
+        $rules->add($rules->isUnique(['username']));
         $rules->add($rules->isUnique(['email']));
         $rules->add($rules->isUnique(['id']));
-        $rules->add($rules->isUnique(['pseudo']));
+        $rules->add($rules->isUnique(['display_name']));
 
         return $rules;
     }

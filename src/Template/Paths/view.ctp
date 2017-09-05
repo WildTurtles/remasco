@@ -51,21 +51,21 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Number') ?></th>
                 <th scope="col"><?= __('Path Id') ?></th>
                 <th scope="col"><?= __('Lock') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Updated') ?></th>
+                <th scope="col"><?= __('Number') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($path->steps as $steps): ?>
             <tr>
                 <td><?= h($steps->id) ?></td>
-                <td><?= h($steps->number) ?></td>
                 <td><?= h($steps->path_id) ?></td>
                 <td><?= h($steps->lock) ?></td>
                 <td><?= h($steps->created) ?></td>
                 <td><?= h($steps->updated) ?></td>
+                <td><?= h($steps->number) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Steps', 'action' => 'view', $steps->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Steps', 'action' => 'edit', $steps->id]) ?>
@@ -136,23 +136,25 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Name') ?></th>
-                <th scope="col"><?= __('Fistname') ?></th>
-                <th scope="col"><?= __('Avatar') ?></th>
-                <th scope="col"><?= __('Pseudo') ?></th>
-                <th scope="col"><?= __('Email') ?></th>
+                <th scope="col"><?= __('Username') ?></th>
                 <th scope="col"><?= __('Password') ?></th>
+                <th scope="col"><?= __('Lastname') ?></th>
+                <th scope="col"><?= __('Firstname') ?></th>
+                <th scope="col"><?= __('Avatar') ?></th>
+                <th scope="col"><?= __('Display Name') ?></th>
+                <th scope="col"><?= __('Email') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($path->users as $users): ?>
             <tr>
                 <td><?= h($users->id) ?></td>
-                <td><?= h($users->name) ?></td>
-                <td><?= h($users->fistname) ?></td>
-                <td><?= h($users->avatar) ?></td>
-                <td><?= h($users->pseudo) ?></td>
-                <td><?= h($users->email) ?></td>
+                <td><?= h($users->username) ?></td>
                 <td><?= h($users->password) ?></td>
+                <td><?= h($users->lastname) ?></td>
+                <td><?= h($users->firstname) ?></td>
+                <td><?= h($users->avatar) ?></td>
+                <td><?= h($users->display_name) ?></td>
+                <td><?= h($users->email) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Users', 'action' => 'view', $users->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Users', 'action' => 'edit', $users->id]) ?>

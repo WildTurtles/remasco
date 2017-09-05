@@ -11,6 +11,8 @@
         <li><?= $this->Html->link(__('New Answer'), ['controller' => 'Answers', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Tries'), ['controller' => 'Tries', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Try'), ['controller' => 'Tries', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Multiple Choice Questions'), ['controller' => 'MultipleChoiceQuestions', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Multiple Choice Question'), ['controller' => 'MultipleChoiceQuestions', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="questions form large-9 medium-8 columns content">
@@ -22,6 +24,7 @@
             echo $this->Form->control('note');
             echo $this->Form->control('answers._ids', ['options' => $answers]);
             echo $this->Form->control('tries._ids', ['options' => $tries]);
+            echo $this->Form->control('multiple_choice_questions._ids', ['options' => $multipleChoiceQuestions]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -7,8 +7,8 @@ use Cake\ORM\Entity;
  * Link Entity
  *
  * @property string $id
- * @property int $name
- * @property int $url
+ * @property string $name
+ * @property string $url
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $updated
  *

@@ -7,11 +7,11 @@ use Cake\ORM\Entity;
  * Step Entity
  *
  * @property string $id
- * @property int $number
  * @property string $path_id
  * @property bool $lock
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $updated
+ * @property int $number
  *
  * @property \App\Model\Entity\Path $path
  * @property \App\Model\Entity\Link[] $links

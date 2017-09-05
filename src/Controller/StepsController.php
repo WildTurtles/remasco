@@ -119,4 +119,58 @@ class StepsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    /**
+     * AddFrom method
+     * @param string|null $id Path id.
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function addFrom($pathId = null)
+    {
+        $step = $this->Steps->newEntity();
+
+        if ($this->request->is('post')) {
+
+
+            $step = $this->Steps->patchEntity($step, $this->request->getData());
+
+						//set the path
+						$this->loadModel('Paths');
+  	   	 		//$path = $this->Paths->get($pathId);
+
+						//set the number
+						$query = $this->Steps->find()
+												->order(['number' => 'DESC']);
+						$query->matching('Paths', function ($q) use ($pathId) {
+    						return $q->where(['Paths.id' => $pathId ])->order(['number' => 'DESC']);
+						});
+
+
+						$laststep = $query->first();
+
+
+						//$step->paths = [$path];
+						$step->number = $laststep->get('number') + 1;
+						$step->path_id = $pathId;
+						//debug($step);
+						//debug($laststep);
+						//debug($path);
+						//exit();
+
+						if ($this->Steps->save($step)) {
+                $this->Flash->success(__('The step has been saved.'));
+
+                return $this->redirect(['controller' => 'Paths', 'action' => 'view', $pathId]);
+            }
+            $this->Flash->error(__('The step could not be saved. Please, try again.'));
+        }
+//      $paths = $this->Steps->Paths->find('list', ['limit' => 200]);
+        $links = $this->Steps->Links->find('list', ['limit' => 200]);
+        $multipleChoiceQuestions = $this->Steps->MultipleChoiceQuestions->find('list', ['limit' => 200]);
+        $openedQuestions = $this->Steps->OpenedQuestions->find('list', ['limit' => 200]);
+//        $this->set(compact('step', 'paths', 'links', 'multipleChoiceQuestions', 'openedQuestions'));
+        $this->set(compact('step', 'links', 'multipleChoiceQuestions', 'openedQuestions'));
+        $this->set('_serialize', ['step']);
+    }
+
 }

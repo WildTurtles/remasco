@@ -37,7 +37,7 @@
             </tr>
             <?php foreach ($topic->chapters as $chapters): ?>
             <tr>
-                <td><?=$this->Html->link(h($chapters->name), ['controller' => 'Chapters', 'action' => 'viewUsers', $chapters->id]) ?></td>
+                <td><?=$this->Html->link(h($chapters->name), ['controller' => 'Chapters', 'action' => 'view', $chapters->id]) ?></td>
                 <td><?= h($chapters->created) ?></td>
                 <td><?= h($chapters->updated) ?></td>
             </tr>

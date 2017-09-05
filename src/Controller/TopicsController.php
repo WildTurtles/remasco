@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Collection\Collection;
+use Cake\ORM\TableRegistry;
 
 /**
  * Topics Controller
@@ -111,5 +113,25 @@ class TopicsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function indexGroup()
+    {
+
+//    $topics =  $this->Topics->find()
+		  $query = $this->Topics->find()
+									->innerJoinWith('Groups.Users')
+									->distinct()
+									->where(['Users.id' => $this->Auth->user('id')])
+									->ANDwhere(['Groups.is_deletable' => '1']);
+
+	    $topics = $this->paginate($query);
+  	  $this->set(compact('topics'));
+    	$this->set('_serialize', ['topics']);
     }
 }

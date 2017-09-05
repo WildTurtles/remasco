@@ -24,11 +24,11 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('number') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('path_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('lock') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('updated') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('number') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -36,11 +36,11 @@
             <?php foreach ($steps as $step): ?>
             <tr>
                 <td><?= h($step->id) ?></td>
-                <td><?= $this->Number->format($step->number) ?></td>
                 <td><?= $step->has('path') ? $this->Html->link($step->path->name, ['controller' => 'Paths', 'action' => 'view', $step->path->id]) : '' ?></td>
                 <td><?= h($step->lock) ?></td>
                 <td><?= h($step->created) ?></td>
                 <td><?= h($step->updated) ?></td>
+                <td><?= $this->Number->format($step->number) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $step->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $step->id]) ?>

@@ -22,9 +22,9 @@
     <fieldset>
         <legend><?= __('Add Step') ?></legend>
         <?php
-            echo $this->Form->control('number');
             echo $this->Form->control('path_id', ['options' => $paths]);
             echo $this->Form->control('lock');
+            echo $this->Form->control('number');
             echo $this->Form->control('links._ids', ['options' => $links]);
             echo $this->Form->control('multiple_choice_questions._ids', ['options' => $multipleChoiceQuestions]);
             echo $this->Form->control('opened_questions._ids', ['options' => $openedQuestions]);

@@ -1,4 +1,18 @@
-# CakePHP Application Skeleton
+# Remasco
+
+## Warning, Never use it
+
+By lack of time (money), this project should be see like a proof of concept.
+There is several issues. 
+
+1. Role issues (no check server side, etc)
+2. Some part of code should be move from controller to model.
+
+
+
+# Original Cakephp Readme
+
+## CakePHP Application Skeleton
 
 [![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
 [![License](https://img.shields.io/packagist/l/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)

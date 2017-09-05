@@ -19,9 +19,8 @@
         <legend><?= __('Add Topic') ?></legend>
         <?php
             echo $this->Form->control('name');
-            echo $this->Form->control('usersid');
             echo $this->Form->control('groups._ids', ['options' => $groups]);
-            echo $this->Form->control('chapters._ids', ['options' => $chapters]);
+           // echo $this->Form->control('chapters._ids', ['options' => $chapters]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

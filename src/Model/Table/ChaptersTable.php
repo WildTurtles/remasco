@@ -67,7 +67,6 @@ class ChaptersTable extends Table
             ->add('id', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
-            ->integer('name')
             ->allowEmpty('name');
 
         return $validator;

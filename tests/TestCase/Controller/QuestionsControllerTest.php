@@ -19,8 +19,30 @@ class QuestionsControllerTest extends IntegrationTestCase
         'app.questions',
         'app.answers',
         'app.answers_questions',
+        'app.answers_questions_tries',
+        'app.questions_tries',
         'app.tries',
-        'app.questions_tries'
+        'app.users',
+        'app.groups',
+        'app.topics',
+        'app.groups_topics',
+        'app.chapters',
+        'app.paths',
+        'app.steps',
+        'app.links',
+        'app.links_steps',
+        'app.multiple_choice_questions',
+        'app.multiple_choice_questions_questions',
+        'app.multiple_choice_questions_steps',
+        'app.multiple_choice_questions_tries',
+        'app.opened_questions',
+        'app.expected_answers',
+        'app.opened_questions_steps',
+        'app.chapters_paths',
+        'app.paths_tries',
+        'app.paths_users',
+        'app.topics_chapters',
+        'app.groups_users'
     ];
 
     /**

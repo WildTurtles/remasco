@@ -29,8 +29,8 @@
             <?php foreach ($links as $link): ?>
             <tr>
                 <td><?= h($link->id) ?></td>
-                <td><?= $this->Number->format($link->name) ?></td>
-                <td><?= $this->Number->format($link->url) ?></td>
+                <td><?= h($link->name) ?></td>
+                <td><?= h($link->url) ?></td>
                 <td><?= h($link->created) ?></td>
                 <td><?= h($link->updated) ?></td>
                 <td class="actions">

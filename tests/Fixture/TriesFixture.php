@@ -36,10 +36,10 @@ class TriesFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => 'ffa5a205-2865-44c6-a9b0-68aedc99ac0f',
-            'created' => 1501764980,
-            'updated' => 1501764980,
-            'user_id' => '4dc26d83-9297-48b3-b41a-f0d38a2b6459'
+            'id' => '211b489e-721f-4d32-9b0f-a49a0ad6aece',
+            'created' => 1502358300,
+            'updated' => 1502358300,
+            'user_id' => '4a88539f-9819-432e-827d-0dd9dc2de99d'
         ],
     ];
 }

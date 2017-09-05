@@ -18,7 +18,32 @@ class LinksControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.links',
         'app.steps',
-        'app.links_steps'
+        'app.paths',
+        'app.chapters',
+        'app.chapters_paths',
+        'app.topics',
+        'app.groups',
+        'app.groups_topics',
+        'app.users',
+        'app.tries',
+        'app.answers_questions',
+        'app.answers_questions_tries',
+        'app.questions_tries',
+        'app.answers',
+        'app.questions',
+        'app.multiple_choice_questions_questions',
+        'app.multiple_choice_questions',
+        'app.multiple_choice_questions_steps',
+        'app.multiple_choice_questions_tries',
+        'app.paths_tries',
+        'app.groups_users',
+        'app.paths_users',
+        'app.topics_users',
+        'app.topics_chapters',
+        'app.links_steps',
+        'app.opened_questions',
+        'app.expected_answers',
+        'app.opened_questions_steps'
     ];
 
     /**

@@ -38,7 +38,7 @@ class StepsTable extends Table
         parent::initialize($config);
 
         $this->setTable('steps');
-        $this->setDisplayField('id');
+        $this->setDisplayField('Number');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
@@ -78,12 +78,12 @@ class StepsTable extends Table
             ->add('id', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
-            ->integer('number')
-            ->allowEmpty('number');
-
-        $validator
             ->boolean('lock')
             ->allowEmpty('lock');
+
+        $validator
+            ->integer('number')
+            ->allowEmpty('number');
 
         return $validator;
     }
