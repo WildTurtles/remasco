@@ -7,8 +7,8 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('My Profile'), ['action' => 'viewProfile']) ?></li>
-        <li><?= $this->Html->link(__('My Topics'), ['controller' => 'Topics', 'action' => 'index-group']) ?></li>
+        <li><?= $this->Html->link(__('My Profile'), ['controller' => 'Users', 'action' => 'viewProfile']) ?></li>
+        <li><?= $this->Html->link(__('My Topics'), ['controller' => 'Topics', 'action' => 'indexGroup']) ?></li>
     </ul>
 </nav>
 <div class="topics index large-9 medium-8 columns content">
