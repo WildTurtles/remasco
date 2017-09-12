@@ -124,8 +124,10 @@ class UsersController extends AppController
     public function viewProfile()
     {
         $user = $this->Users->get($this->Auth->user('id'), [
-            'contain' => ['Groups', 'Paths', 'Topics', 'Tries']
-        ]);
+					'contain' => ['Groups' => function ($q) {
+   						return $q->where(['Groups.is_deletable' => true]);
+							}
+				]]);
 
         $this->set('user', $user);
         $this->set('_serialize', ['user']);

@@ -150,29 +150,12 @@ class ChaptersController extends AppController
      */
     public function viewUsers($id = null)
     {
-        /*$chapter = $this->Chapters->get($id, [
-            'contain' => ['Paths.Steps.Links','Paths.Steps', 'Topics']
-        ]);*/
 				$userId = $this->Auth->user('id');
-				$chapter = $this->Chapters->find()
-					->contain(['Paths.Steps.Links', 'Topics', 'Paths.Users'])
-					->where(["Chapters.id" => $id]);
+				$chapters = $this->Chapters->Paths->Users->find('all')->where(['Users.id' => $userId])->contain(['Paths' => ['Steps.links','Chapters' => function ($q) use ($id) {
+        	return $q->where(['Chapters.id' => $id]);
+    		}],]);
 
-//				debug($chapter->toArray());exit();
-/*
-				foreach ($chapter as $row) {
-    			// Do stuff
-					debug($row);
-				}
-				exit();*/
-
-//				$chapter->where(['Chapters.Paths.Users.id' => $userId ]);
-
-//			$chapter = $this->Chapters->Paths->Users->find()->where(['Users.id' => $userId])->contain(['Paths' => ['Steps.links','Chapters' => function ($q) use ($id) {
-//        	return $q->where(['Chapters.id' => $id]);
-//    		}],]);
-
-        $this->set('chapter', $chapter);
+				 $this->set(compact('chapters'));
         $this->set('_serialize', ['chapter']);
 
 
