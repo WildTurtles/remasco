@@ -48,5 +48,19 @@ class User extends Entity
         }
     }
 
+		public function checkGroup($groupName)
+		{
+			$result = false;
+
+			foreach($this->groups as $group){
+				if($group->name == $groupName)
+				{
+					$result = true;
+				}
+			}
+
+			return $result;
+		}
+
 
 }

@@ -36,7 +36,7 @@ class LinksController extends AppController
     public function view($id = null)
     {
         $link = $this->Links->get($id, [
-            'contain' => ['Steps']
+            'contain' => ['Steps', 'Users']
         ]);
 
         $this->set('link', $link);
@@ -61,7 +61,8 @@ class LinksController extends AppController
             $this->Flash->error(__('The link could not be saved. Please, try again.'));
         }
         $steps = $this->Links->Steps->find('list', ['limit' => 200]);
-        $this->set(compact('link', 'steps'));
+        $users = $this->Links->Users->find('list', ['limit' => 200]);
+        $this->set(compact('link', 'steps', 'users'));
         $this->set('_serialize', ['link']);
     }
 
@@ -75,7 +76,7 @@ class LinksController extends AppController
     public function edit($id = null)
     {
         $link = $this->Links->get($id, [
-            'contain' => ['Steps']
+            'contain' => ['Steps', 'Users']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $link = $this->Links->patchEntity($link, $this->request->getData());
@@ -87,7 +88,8 @@ class LinksController extends AppController
             $this->Flash->error(__('The link could not be saved. Please, try again.'));
         }
         $steps = $this->Links->Steps->find('list', ['limit' => 200]);
-        $this->set(compact('link', 'steps'));
+        $users = $this->Links->Users->find('list', ['limit' => 200]);
+        $this->set(compact('link', 'steps', 'users'));
         $this->set('_serialize', ['link']);
     }
 

@@ -37,7 +37,7 @@ class UsersTable extends Table
         parent::initialize($config);
 
         $this->setTable('users');
-        $this->setDisplayField('name');
+        $this->setDisplayField('username');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Tries', [
@@ -57,6 +57,11 @@ class UsersTable extends Table
             'foreignKey' => 'user_id',
             'targetForeignKey' => 'topic_id',
             'joinTable' => 'topics_users'
+        ]);
+        $this->belongsToMany('Links', [
+            'foreignKey' => 'user_id',
+            'targetForeignKey' => 'link_id',
+            'joinTable' => 'links_users'
         ]);
     }
 

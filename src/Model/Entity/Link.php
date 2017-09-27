@@ -12,6 +12,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $updated
  *
+ * @property \App\Model\Entity\LinksUser[] $links_users
  * @property \App\Model\Entity\Step[] $steps
  */
 class Link extends Entity

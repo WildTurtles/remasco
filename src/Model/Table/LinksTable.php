@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Links Model
  *
  * @property \App\Model\Table\StepsTable|\Cake\ORM\Association\BelongsToMany $Steps
+ * @property |\Cake\ORM\Association\BelongsToMany $Users
  *
  * @method \App\Model\Entity\Link get($primaryKey, $options = [])
  * @method \App\Model\Entity\Link newEntity($data = null, array $options = [])
@@ -44,6 +45,11 @@ class LinksTable extends Table
             'foreignKey' => 'link_id',
             'targetForeignKey' => 'step_id',
             'joinTable' => 'links_steps'
+        ]);
+        $this->belongsToMany('Users', [
+            'foreignKey' => 'link_id',
+            'targetForeignKey' => 'user_id',
+            'joinTable' => 'links_users'
         ]);
     }
 

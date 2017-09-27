@@ -36,11 +36,11 @@ class LinksFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => '7c24600f-db78-4ad8-91dd-a01c6b20237b',
+            'id' => '771d8d44-11b3-4816-b4cb-06ae2a4994df',
             'name' => 'Lorem ipsum dolor sit amet',
             'url' => 'Lorem ipsum dolor sit amet',
-            'created' => 1502710035,
-            'updated' => 1502710035
+            'created' => 1506446419,
+            'updated' => 1506446419
         ],
     ];
 }

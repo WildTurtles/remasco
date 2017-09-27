@@ -25,6 +25,7 @@ class LinksTableTest extends TestCase
      */
     public $fixtures = [
         'app.links',
+        'app.links_users',
         'app.steps',
         'app.paths',
         'app.chapters',
@@ -46,8 +47,8 @@ class LinksTableTest extends TestCase
         'app.paths_tries',
         'app.groups_users',
         'app.paths_users',
-        'app.topics_chapters',
         'app.topics_users',
+        'app.topics_chapters',
         'app.links_steps',
         'app.opened_questions',
         'app.expected_answers',
