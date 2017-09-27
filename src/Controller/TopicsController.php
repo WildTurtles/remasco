@@ -57,8 +57,7 @@ class TopicsController extends AppController
             $topic = $this->Topics->patchEntity($topic, $this->request->getData());
             if ($this->Topics->save($topic)) {
                 $this->Flash->success(__('The topic has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view']);
             }
             $this->Flash->error(__('The topic could not be saved. Please, try again.'));
         }
@@ -78,18 +77,31 @@ class TopicsController extends AppController
     public function edit($id = null)
     {
         $topic = $this->Topics->get($id, [
-            'contain' => ['Groups', 'Chapters']
+            'contain' => ['Chapters', 'Groups']
         ]);
+
+/*
+        $topic = $this->Topics->find('all')->where(['Topics.id' => $id])->contain([
+					'Chapters',
+					'Groups' =>
+							function ($q) {
+        				return $q->where(['Groups.is_deletable' => '1']);
+    					}
+        ]);*/
+
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $topic = $this->Topics->patchEntity($topic, $this->request->getData());
             if ($this->Topics->save($topic)) {
                 $this->Flash->success(__('The topic has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The topic could not be saved. Please, try again.'));
+								$this->setAction('view', $topic->id);
+//                return $this->redirect(['action' => 'index-teachers']);
+            }else{
+            	$this->Flash->error(__('The topic could not be saved. Please, try again.'));
+						}
         }
-        $groups = $this->Topics->Groups->find('list', ['limit' => 200]);
+        $groups = $this->Topics->Groups->find('list', ['limit' => 200])->where(['is_deletable' => '1']);
         $chapters = $this->Topics->Chapters->find('list', ['limit' => 200]);
         $this->set(compact('topic', 'groups', 'chapters'));
         $this->set('_serialize', ['topic']);
@@ -120,18 +132,81 @@ class TopicsController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function indexGroup()
+    public function indexTeachers()
+    {
+			//query for teachers
+      $query = $this->Topics->find()
+                  ->innerJoinWith('Users')
+                  ->distinct()
+                  ->where(['Users.id' => $this->Auth->user('id')]);
+			$topics = $this->paginate($query);
+
+  	  $this->set(compact('topics'));
+    	$this->set('_serialize', ['topics']);
+		}
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function indexStudents()
     {
 
-//    $topics =  $this->Topics->find()
+			//query for students
 		  $query = $this->Topics->find()
 									->innerJoinWith('Groups.Users')
 									->distinct()
 									->where(['Users.id' => $this->Auth->user('id')])
 									->ANDwhere(['Groups.is_deletable' => '1']);
+			$topics = $this->paginate($query);
 
-	    $topics = $this->paginate($query);
   	  $this->set(compact('topics'));
     	$this->set('_serialize', ['topics']);
     }
+
+
+
+
+    /**
+     * Add method
+     *
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function addTopic()
+    {
+        $topic = $this->Topics->newEntity();
+        if ($this->request->is('post')) {
+ 						$this->Topics->save($topic, ['associated' => ['Users']]);
+
+            $topic = $this->Topics->patchEntity($topic, $this->request->getData());
+						$users = TableRegistry::get('Users');
+						$user = $users->get($this->Auth->user('id'));
+
+//            debug($user);
+//						debug($topic);
+						$this->Topics->Users->link($topic, [$user]);
+//						debug($topic);
+
+
+            if ($this->Topics->save($topic)) {
+
+
+                $this->Flash->success(__('The topic has been saved.'));
+
+                return $this->redirect(['action' => 'index-teachers']);
+            }
+            $this->Flash->error(__('The topic could not be saved. Please, try again.'));
+        }
+				$names = array('admin', 'teachers', 'students');
+        $groups = $this->Topics->Groups->find('list', ['limit' => 200])
+												->where(['name NOT IN' => $names]);
+        $chapters = $this->Topics->Chapters->find('list', ['limit' => 200]);
+        $this->set(compact('topic', 'groups', 'chapters'));
+        $this->set('_serialize', ['topic']);
+    }
+
+
+
+
 }

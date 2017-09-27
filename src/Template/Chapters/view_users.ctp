@@ -6,10 +6,44 @@
 ?>
 
 <?php echo $this->element('menu'); ?>
+<?php 
+
+	debug($chapter);
+/*debug($topics);
+debug($paths);*/
+
+foreach($paths as $path)
+{
+debug($path);
+}
+foreach($topics as $topic)
+{
+debug($topic);
+}
+exit;
+
+ ?>
+
+
+
 
 <div class="chapters view large-9 medium-8 columns content">
 
 <?php foreach ($chapters as $chapter): ?>
+    <table class="vertical-table">
+        <tr>
+            <th scope="row"><?= __('Name') ?></th>
+            <td><?= h($chapter->name) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Created') ?></th>
+            <td><?= h($chapter->created) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Updated') ?></th>
+            <td><?= h($chapter->updated) ?></td>
+        </tr>
+    </table>
   <div class="related">
     <h4><?= __('Related Paths') ?></h4>
     <?php if (!empty($chapter->paths)): ?>
@@ -38,6 +72,10 @@
             </div>
           </div>
         <?php endforeach; ?>
+				 <?php if ($mygrp === 'teachers' || $mygrp === 'admin' ): ?>
+          <?php echo $this->Html->link(__('Add a chapter'), ['controller' => 'Chapters', 'action' => 'addfrom', $topic->id]) ?>
+        <?php endif; ?>
+
       </div>
     <?php endif; ?>
   </div>

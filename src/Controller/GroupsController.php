@@ -56,7 +56,7 @@ class GroupsController extends AppController
             if ($this->Groups->save($group)) {
                 $this->Flash->success(__('The group has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'index-classes']);
             }
             $this->Flash->error(__('The group could not be saved. Please, try again.'));
         }
@@ -111,5 +111,64 @@ class GroupsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function indexClasses()
+    {
+        $names = array('admin', 'teachers', 'students');
+        $grps = $this->Groups->find('all', ['limit' => 200])
+                        ->where(['name NOT IN' => $names]);
+				$groups = $this->paginate($grps);
+
+        $this->set(compact('groups'));
+        $this->set('_serialize', ['groups']);
+    }
+
+    /**
+     * View method
+     *
+     * @param string|null $id Group id.
+     * @return \Cake\Http\Response|void
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function viewClasses($id = null)
+    {
+
+        $group = $this->Groups->get($id, [
+            'contain' => ['Topics', 'Users']
+        ]);
+
+        $this->set('group', $group);
+        $this->set('_serialize', ['group']);
+    }
+
+    public function indexTeachers()
+    {
+				$groups = $this->paginate($this->groupUsers('teachers'));
+
+        $this->set(compact('groups'));
+        $this->set('_serialize', ['groups']);
+    }
+
+		private function groupUsers($groupName)
+		{
+        $grp = $this->Groups->find('all', [
+            'contain' => ['Users']
+        ])->where(['name IN' => $groupName]);
+
+			return $grp;
+		}
+
+    public function indexStudents()
+    {
+				$groups = $this->paginate($this->groupUsers('students'));
+
+        $this->set(compact('groups'));
+        $this->set('_serialize', ['groups']);
     }
 }

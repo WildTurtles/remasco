@@ -36,7 +36,7 @@ class UsersController extends AppController
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['Groups', 'Paths', 'Topics', 'Tries']
+            'contain' => ['Groups', 'Paths', 'Topics', 'Tries', 'Links']
         ]);
 
         $this->set('user', $user);
@@ -63,7 +63,8 @@ class UsersController extends AppController
         $groups = $this->Users->Groups->find('list', ['limit' => 200]);
         $paths = $this->Users->Paths->find('list', ['limit' => 200]);
         $topics = $this->Users->Topics->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'groups', 'paths', 'topics'));
+        $links = $this->Users->Links->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'groups', 'paths', 'topics','links'));
         $this->set('_serialize', ['user']);
     }
 
@@ -77,7 +78,7 @@ class UsersController extends AppController
     public function edit($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['Groups', 'Paths', 'Topics']
+            'contain' => ['Groups', 'Paths', 'Topics', 'Links']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
@@ -91,7 +92,8 @@ class UsersController extends AppController
         $groups = $this->Users->Groups->find('list', ['limit' => 200]);
         $paths = $this->Users->Paths->find('list', ['limit' => 200]);
         $topics = $this->Users->Topics->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'groups', 'paths', 'topics'));
+        $links = $this->Users->Links->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'groups', 'paths', 'topics', 'links'));
         $this->set('_serialize', ['user']);
     }
 
@@ -175,7 +177,7 @@ class UsersController extends AppController
     public function editProfile()
     {
         $user = $this->Users->get($this->Auth->user('id'), [
-            'contain' => ['Groups', 'Paths', 'Topics']
+            'contain' => ['Groups', 'Paths', 'Topics', 'Links']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
@@ -189,7 +191,8 @@ class UsersController extends AppController
         $groups = $this->Users->Groups->find('list', ['limit' => 200]);
         $paths = $this->Users->Paths->find('list', ['limit' => 200]);
         $topics = $this->Users->Topics->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'groups', 'paths', 'topics'));
+        $links = $this->Users->Links->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'groups', 'paths', 'topics','links'));
         $this->set('_serialize', ['user']);
     }
 

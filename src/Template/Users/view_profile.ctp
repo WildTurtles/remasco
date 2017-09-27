@@ -37,9 +37,9 @@
     </table>
 		<?= $this->Html->link(__('Edit my Profile'), ['action' => 'editProfile']) ?></br>
 		<?= $this->Html->link(__('Change my password'), ['action' => 'changePassword']) ?>
+    <?php if (!empty($user->groups)): ?>
     <div class="related">
         <h4><?= __('Related Groups') ?></h4>
-        <?php if (!empty($user->groups)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Name') ?></th>

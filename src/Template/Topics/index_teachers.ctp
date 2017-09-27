@@ -9,6 +9,11 @@
 
 <div class="topics index large-9 medium-8 columns content">
     <h3><?= __('Topics') ?></h3>
+		<?php if ($mygrp === 'teachers'): ?>
+			<?php echo $this->Html->link(__('Add a Topic'), ['action' => 'addTopic']) ?>
+		<?php endif; ?>
+
+
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

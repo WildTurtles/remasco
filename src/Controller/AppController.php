@@ -16,6 +16,8 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
+
 
 /**
  * Application Controller
@@ -46,13 +48,15 @@ class AppController extends Controller
 				$this->loadComponent('Auth', [
             'authError' => 'Did you really think you are allowed to see that?',
         		'loginRedirect' => [
-            	'controller' => 'Topics',
-            	'action' => 'indexGroup'
+            	'controller' => 'Users',
+            	'action' => 'view-profile'
         		],
             'logoutRedirect' => [
                 'controller' => 'Users',
                 'action' => 'login'
-            ]
+            ],
+						'checkAuthIn' => 'Controller.initialize'
+
         ]);
 
 
@@ -77,11 +81,13 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+			$this->loadComponent('Auth');
+			$this->setGroup();
     }
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['index', 'view', 'edit', 'add','delete' ,'display', 'addfrom']);
+      $this->Auth->allow(['index', 'view', 'edit', 'add','delete' ,'display', 'addfrom']);
     }
 
    public function isAuthorized($user)
@@ -96,4 +102,28 @@ class AppController extends Controller
 
     return result;
   }
+
+	public function setGroup()
+	{
+		//debug($this); //exit();
+  	if ($this->Auth->user()) {
+	  	$this->Users = TableRegistry::get('Users');
+  	  $user = $this->Users->get($this->Auth->user('id'),[
+    	  'contain' => ['Groups']
+      ]);
+			$varName = 'mygrp';
+      if($user->checkGroup('admin'))
+      {
+      	$this->set($varName, 'admin');
+      }
+      elseif($user->checkGroup('teachers'))
+      {
+       	$this->set($varName, 'teachers');
+      }
+      elseif($user->checkGroup('students'))
+      {
+       	$this->set($varName, 'students');
+      }
+  	}
+	}
 }

@@ -3,18 +3,18 @@
   * @var \App\View\AppView $this
   */
 ?>
-<?php  echo $this->element('menu'); ?>
+<?php echo $this->element('menu'); ?>
 
 <div class="topics form large-9 medium-8 columns content">
     <?= $this->Form->create($topic) ?>
     <fieldset>
-        <legend><?= __('Edit Topic') ?></legend>
+        <legend><?= __('Add Topic') ?></legend>
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('groups._ids', ['options' => $groups]);
-            //echo $this->Form->control('chapters._ids', ['options' => $chapters]);
+           // echo $this->Form->control('chapters._ids', ['options' => $chapters]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end(); ?>
+    <?= $this->Form->end() ?>
 </div>
