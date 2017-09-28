@@ -165,7 +165,8 @@ class TopicsController extends AppController
 									->distinct()
 									->where(['Users.id' => $this->Auth->user('id')])
 									->ANDwhere(['Groups.is_deletable' => '1']);
-			$topics = $this->paginate($query);
+
+		$topics = $this->paginate($query);
 
   	  $this->set(compact('topics'));
     	$this->set('_serialize', ['topics']);

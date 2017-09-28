@@ -167,5 +167,4 @@ class PathsController extends AppController
         $this->set('_serialize', ['path']);
     }
 
-
 }

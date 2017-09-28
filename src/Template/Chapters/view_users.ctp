@@ -47,7 +47,9 @@
                 <?php endif; ?>
                 <h4><?= h($path->name) ?></h4>
                 <p><?= h($path->notes) ?></p>
-                <?php //echo $this->Html->link(__('Add Step'), ['controller' => 'Steps', 'action' =>  'addFrom',  $paths->id ]) ?>
+							 <?php if ($mygrp === 'teachers' || $mygrp === 'admin' ): ?>
+                <?php echo $this->Html->link(__('Add Step'), ['controller' => 'Steps', 'action' =>  'addFrom',  $path->id ]) ?>
+							<?php endif; ?>
               </div>
             </div>
           </div>
