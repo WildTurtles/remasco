@@ -88,7 +88,7 @@ class GroupsController extends AppController
             if ($this->Groups->save($group)) {
                 $this->Flash->success(__('The group has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'index-classes']);
             }
             $this->Flash->error(__('The group could not be saved. Please, try again.'));
         }
@@ -125,11 +125,14 @@ class GroupsController extends AppController
      */
     public function indexClasses()
     {
-        $names = array('admin', 'teachers', 'students');
-        $grps = $this->Groups->find('all', ['limit' => 200])
-                        ->where(['name NOT IN' => $names]);
-				$groups = $this->paginate($grps);
 
+        $names = array('admin', 'teachers', 'students');
+        $grps = $this->Groups->find('all', ['limit' => 200])->contain(['Users'])->where(['name NOT IN' => $names]);
+				$userId = $this->Auth->user('id');
+				$grps->matching('Users', function ($q) use ($userId) {
+    				return $q->where(['Users.id' => $userId]);
+				});
+				$groups = $this->paginate($grps);
         $this->set(compact('groups'));
         $this->set('_serialize', ['groups']);
     }
