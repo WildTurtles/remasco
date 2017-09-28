@@ -56,7 +56,7 @@
             </tr>
             <?php foreach ($topic->groups as $groups): ?>
             <tr>
-                <td><?= h($groups->name) ?></td>
+                <td><?= $this->Html->link(h($groups->name), ['controller' => 'Groups', 'action' => 'view-classes', $groups->id]) ?></td>
             </tr>
             <?php endforeach; ?>
         </table>

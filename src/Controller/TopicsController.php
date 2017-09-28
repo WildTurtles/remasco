@@ -95,13 +95,19 @@ class TopicsController extends AppController
             if ($this->Topics->save($topic)) {
                 $this->Flash->success(__('The topic has been saved.'));
 
-								$this->setAction('view', $topic->id);
-//                return $this->redirect(['action' => 'index-teachers']);
+//								$this->setAction('view', $topic->id);
+                return $this->redirect(['action' => 'view', $topic->id]);
             }else{
             	$this->Flash->error(__('The topic could not be saved. Please, try again.'));
 						}
         }
-        $groups = $this->Topics->Groups->find('list', ['limit' => 200])->where(['is_deletable' => '1']);
+				$names = array('admin', 'teachers', 'students');
+        $groups = $this->Topics->Groups->find('list', ['limit' => 200])->where(['is_deletable' => '1'])->contain(['Users'])->where(['name NOT IN' => $names]);
+				$userId = $this->Auth->user('id');
+				$groups->matching('Users', function ($q) use ($userId) {
+            return $q->where(['Users.id' => $userId]);
+        });
+
         $chapters = $this->Topics->Chapters->find('list', ['limit' => 200]);
         $this->set(compact('topic', 'groups', 'chapters'));
         $this->set('_serialize', ['topic']);
