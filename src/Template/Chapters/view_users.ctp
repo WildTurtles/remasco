@@ -73,7 +73,7 @@ foreach($topics as $topic)
           </div>
         <?php endforeach; ?>
 				 <?php if ($mygrp === 'teachers' || $mygrp === 'admin' ): ?>
-          <?php echo $this->Html->link(__('Add a chapter'), ['controller' => 'Chapters', 'action' => 'addfrom', $topic->id]) ?>
+          <?php echo $this->Html->link(__('Add a path'), ['controller' => 'Pathc', 'action' => 'addfrom', $chapter->id]) ?>
         <?php endif; ?>
 
       </div>

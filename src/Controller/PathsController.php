@@ -114,4 +114,30 @@ class PathsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    /**
+     * Add method
+     *
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function addFrom($chapterId = null )
+    {
+        $path = $this->Paths->newEntity();
+        if ($this->request->is('post')) {
+            $path = $this->Paths->patchEntity($path, $this->request->getData());
+            if ($this->Paths->save($path)) {
+                $this->Flash->success(__('The path has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The path could not be saved. Please, try again.'));
+        }
+        $chapters = $this->Paths->Chapters->find('list', ['limit' => 200]);
+        $tries = $this->Paths->Tries->find('list', ['limit' => 200]);
+        $users = $this->Paths->Users->find('list', ['limit' => 200]);
+        $this->set(compact('path', 'chapters', 'tries', 'users'));
+        $this->set('_serialize', ['path']);
+    }
+
+
 }
