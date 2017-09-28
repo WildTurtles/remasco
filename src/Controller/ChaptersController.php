@@ -165,8 +165,7 @@ class ChaptersController extends AppController
 					])->where(['Chapters.id' => $id]);
 */
 				$topics = $this->Chapters->Topics->find('all');
-        $paths = $this->Chapters->Paths->find('all')->contain(['steps']);
-
+        $paths = $this->Chapters->Paths->find('all')->contain(['Steps' => ['sort' => ['Steps.number' => 'DESC'] ]]);
 
 
 			/*debug($chapter->toArray());

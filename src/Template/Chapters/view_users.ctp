@@ -8,19 +8,19 @@
 <?php echo $this->element('menu'); ?>
 <?php 
 
-	debug($chapter);
+//	debug($chapter);
 /*debug($topics);
 debug($paths);*/
 
 foreach($paths as $path)
 {
-debug($path);
+//debug($path);
 }
 foreach($topics as $topic)
 {
-debug($topic);
+//debug($topic);
 }
-exit;
+//exit;
 
  ?>
 
@@ -29,7 +29,7 @@ exit;
 
 <div class="chapters view large-9 medium-8 columns content">
 
-<?php foreach ($chapters as $chapter): ?>
+<?php// foreach ($chapters as $chapter): ?>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Name') ?></th>
@@ -46,14 +46,14 @@ exit;
     </table>
   <div class="related">
     <h4><?= __('Related Paths') ?></h4>
-    <?php if (!empty($chapter->paths)): ?>
+    <?php if (!empty($paths)): ?>
       <div class="row small-up-2 medium-up-3 chapters view content related">
-        <?php foreach ($chapter->paths as $paths): ?>
+        <?php foreach ($paths as $path): ?>
           <div class="column ">
             <div class="card">
               <div class="card-section">
-                <?php if (!empty($paths->steps)): ?>
-                  <?php foreach ($paths->steps as $steps): ?>
+                <?php if (!empty($path->steps)): ?>
+                  <?php foreach ($path->steps as $steps): ?>
                     <p><?= h($steps->number) ?></p>
                     <?php if (!empty($steps->links)): ?>
                       <?php foreach ($steps->links as $links): ?>
@@ -65,8 +65,8 @@ exit;
                     <?php endif; ?>
                   <?php endforeach; ?>
                 <?php endif; ?>
-                <h4><?= h($paths->name) ?></h4>
-                <p><?= h($paths->notes) ?></p>
+                <h4><?= h($path->name) ?></h4>
+                <p><?= h($path->notes) ?></p>
                 <?php //echo $this->Html->link(__('Add Step'), ['controller' => 'Steps', 'action' =>  'addFrom',  $paths->id ]) ?>
               </div>
             </div>
@@ -79,5 +79,5 @@ exit;
       </div>
     <?php endif; ?>
   </div>
-<?php endforeach; ?>
+<?php //endforeach; ?>
 </div>
