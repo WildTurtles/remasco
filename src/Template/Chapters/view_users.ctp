@@ -6,26 +6,6 @@
 ?>
 
 <?php echo $this->element('menu'); ?>
-<?php 
-
-//	debug($chapter);
-/*debug($topics);
-debug($paths);*/
-
-foreach($paths as $path)
-{
-//debug($path);
-}
-foreach($topics as $topic)
-{
-//debug($topic);
-}
-//exit;
-
- ?>
-
-
-
 
 <div class="chapters view large-9 medium-8 columns content">
 
@@ -73,7 +53,7 @@ foreach($topics as $topic)
           </div>
         <?php endforeach; ?>
 				 <?php if ($mygrp === 'teachers' || $mygrp === 'admin' ): ?>
-          <?php echo $this->Html->link(__('Add a path'), ['controller' => 'Pathc', 'action' => 'addfrom', $chapter->id]) ?>
+          <?php echo $this->Html->link(__('Add a path'), ['controller' => 'Paths', 'action' => 'addfrom', $chapter->id]) ?>
         <?php endif; ?>
 
       </div>

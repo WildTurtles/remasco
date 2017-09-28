@@ -132,10 +132,38 @@ class PathsController extends AppController
             }
             $this->Flash->error(__('The path could not be saved. Please, try again.'));
         }
-        $chapters = $this->Paths->Chapters->find('list', ['limit' => 200]);
-        $tries = $this->Paths->Tries->find('list', ['limit' => 200]);
-        $users = $this->Paths->Users->find('list', ['limit' => 200]);
-        $this->set(compact('path', 'chapters', 'tries', 'users'));
+        //$tries = $this->Paths->Tries->find('list', ['limit' => 200]);
+
+			 	$topics = $this->Paths->Chapters->Topics->find()->matching('Chapters',
+ 					function ($q) use ($chapterId) {
+    				return $q
+        		->where(['Chapters.id' => $chapterId]);
+					});
+				$topicsId = array();
+				foreach( $topics as $topic)
+				{
+					array_push($topicsId, $topic->id);
+				}
+				$groups = $this->Paths->Chapters->Topics->Groups->find()->matching('Topics',
+          function ($q) use ($topicsId) {
+            return $q
+            ->where(['Topics.id IN' => $topicsId]);
+          });
+				$names = array('admin', 'teachers', 'students');
+				$groups->where(['Groups.name NOT IN' => $names]);
+				$groupsId = array();
+				foreach($groups as $group)
+				{
+					array_push($groupsId, $group->id);
+				}
+				$users = $this->Paths->Users->find('list')->matching('Groups',
+          function ($q) use ($groupsId) {
+            return $q
+            ->where(['Groups.id IN' => $groupsId]);
+          });
+				$users->where(['Users.id !=' => $this->Auth->user('id') ]);
+
+        $this->set(compact('path', 'tries','users'));
         $this->set('_serialize', ['path']);
     }
 
