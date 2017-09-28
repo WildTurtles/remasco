@@ -9,8 +9,9 @@
 
 <div class="topics view large-9 medium-8 columns content">
     <h3><?= h($topic->name) ?></h3>
-		<?php echo $this->Html->link(__('Edit, change groups (classes) assign'), ['controller' => 'Topics', 'action' => 'edit', $topic->id]) ?>
-
+		<?php if ($mygrp === 'teachers' || $mygrp === 'admin' ): ?>
+			<?php echo $this->Html->link(__('Edit, change groups (classes) assign'), ['controller' => 'Topics', 'action' => 'edit', $topic->id]) ?>
+		<?php endif; ?>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Name') ?></th>
