@@ -23,8 +23,8 @@
             <tr>
                 <td><?= $this->Html->link( h($group->name), ['action' => 'viewClasses', $group->id]) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $group->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $group->id], ['confirm' => __('Are you sure you want to delete # {0}?', $group->id)]) ?>
+                    <?php // echo  $this->Html->link(__('Edit'), ['action' => 'edit', $group->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $group->id], ['confirm' => __('Are you sure you want to delete # {0}?', $group->name)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

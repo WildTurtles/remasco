@@ -10,25 +10,17 @@
 
 <div class="groups view large-9 medium-8 columns content">
     <h3><?= h($group->name) ?></h3>
+    <?php echo $this->Html->link(__('Add people, edit the group. '), ['controller' => 'Groups', 'action' =>  'edit',$group->id ]) ?>
     <div class="related">
-        <h4><?= __('Related Topics') ?></h4>
+        <h4><?= __('Related Users') ?></h4>
         <?php if (!empty($group->topics)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Name') ?></th>
-                <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Updated') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($group->topics as $topics): ?>
+            <?php foreach ($group->users as $user): ?>
             <tr>
-                <td> <?= $this->Html->link( h($topics->name), ['controller' => 'Topics', 'action' => 'view', $topics->id]) ?> <?php //echo h($topics->name) ?></td>
-                <td><?= h($topics->created) ?></td>
-                <td><?= h($topics->updated) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Topics', 'action' => 'edit', $topics->id]) ?>
-										<?= $this->Form->postLink(__('Delete'), ['controller' => 'Topics', 'action' => 'delete', $topics->id], ['confirm' => __('Are you sure you want to delete # {0}?', $topics->name)]) ?>
-                </td>
+                <td><?= h($user->full_name) ?></td>
             </tr>
             <?php endforeach; ?>
         </table>
