@@ -5,6 +5,9 @@
   */
 ?>
 
+<?php //debug($chapter); exit; ?> 
+
+
 <?php echo $this->element('menu'); ?>
 
 <div class="chapters view large-9 medium-8 columns content">
@@ -29,6 +32,7 @@
     <?php if (!empty($paths)): ?>
       <div class="row small-up-2 medium-up-3 chapters view content related">
         <?php foreach ($paths as $path): ?>
+				<?php //debug($path); exit; ?> 
           <div class="column ">
             <div class="card">
               <div class="card-section">
@@ -45,7 +49,11 @@
                     <?php endif; ?>
                   <?php endforeach; ?>
                 <?php endif; ?>
-                <h4><?= h($path->name) ?></h4>
+                <h4><?= h($path->name) ?> </h4>
+               <?php if ($mygrp === 'teachers' || $mygrp === 'admin' ): ?>
+                <?php echo $this->Html->link(__('Edit Path'), ['controller' => 'Paths', 'action' =>  'edit',  $path->id, $chapter->id ]) ?>
+              <?php endif; ?>
+
                 <p><?= h($path->notes) ?></p>
 							 <?php if ($mygrp === 'teachers' || $mygrp === 'admin' ): ?>
                 <?php echo $this->Html->link(__('Add Step'), ['controller' => 'Steps', 'action' =>  'addFrom',  $path->id, $chapter->id ]) ?>

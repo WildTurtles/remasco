@@ -75,7 +75,7 @@ class ChaptersController extends AppController
     public function edit($id = null)
     {
         $chapter = $this->Chapters->get($id, [
-            'contain' => ['Paths', 'Topics']
+            'contain' => ['Paths', 'Topics', 'Paths.Steps']
         ]);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -126,6 +126,11 @@ class ChaptersController extends AppController
 						$topic = $this->Topics->get($topicId);
             $chapter = $this->Chapters->patchEntity($chapter, $this->request->getData());
 						$chapter->topics = [$topic];
+
+/*            $users = TableRegistry::get('Users');
+            $user = $users->get($this->Auth->user('id'));
+            $this->Chapters->Users->link($chapter, [$user]);
+*/
             if ($this->Chapters->save($chapter)) {
                 $this->Flash->success(__('The chapter has been saved.'));
 
@@ -150,8 +155,9 @@ class ChaptersController extends AppController
      */
     public function viewUsers($id = null)
     {
+//      $chapter = $this->Chapters->newEntity();
       $userId = $this->Auth->user('id');
-
+//			debug($id);
 			$chapter = $this->Chapters->get($id, [
             'contain' => ['Paths', 'Paths.Steps','Paths.Steps.links', 'Paths.Users']
         ]);

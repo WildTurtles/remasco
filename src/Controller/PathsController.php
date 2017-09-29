@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Paths Controller
@@ -74,24 +75,58 @@ class PathsController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function edit($id = null, $chapterId =null)
     {
         $path = $this->Paths->get($id, [
-            'contain' => ['Chapters', 'Tries', 'Users']
+            'contain' => ['Chapters', 'Tries', 'Users', 'Steps', 'Steps.Links']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $path = $this->Paths->patchEntity($path, $this->request->getData());
+            $users = TableRegistry::get('Users');
+            $user = $users->get($this->Auth->user('id'));
+            $path->users[] = $user;
             if ($this->Paths->save($path)) {
                 $this->Flash->success(__('The path has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'Chapters' ,'action' => 'view-users', $chapterId]);
             }
-            $this->Flash->error(__('The path could not be saved. Please, try again.'));
+            else
+            {
+                $this->Flash->error(__('The path could not be saved. Please, try again.'));
+            }
         }
-        $chapters = $this->Paths->Chapters->find('list', ['limit' => 200]);
-        $tries = $this->Paths->Tries->find('list', ['limit' => 200]);
-        $users = $this->Paths->Users->find('list', ['limit' => 200]);
-        $this->set(compact('path', 'chapters', 'tries', 'users'));
+        $topics = $this->Paths->Chapters->Topics->find()->matching('Chapters',
+ 		    function ($q) use ($chapterId) {
+    	        return $q->where(['Chapters.id' => $chapterId]);
+			});
+		$topicsId = array();
+		foreach( $topics as $topic)
+		{
+		    array_push($topicsId, $topic->id);
+		}
+        $groups = $this->Paths->Chapters->Topics->Groups->find()->matching('Topics',
+          function ($q) use ($topicsId) {
+            return $q
+            ->where(['Topics.id IN' => $topicsId]);
+          });
+        $names = array('admin', 'teachers', 'students');
+        $groups->where(['Groups.name NOT IN' => $names]);
+        $groupsId = array();
+        foreach($groups as $group)
+        {
+          array_push($groupsId, $group->id);
+        }
+        $users = $this->Paths->Users->find('list')->matching('Groups',
+          function ($q) use ($groupsId) {
+            return $q
+            ->where(['Groups.id IN' => $groupsId]);
+          });
+        $users->where(['Users.id !=' => $this->Auth->user('id') ]);
+
+
+        //$chapters = $this->Paths->Chapters->find('list', ['limit' => 200]);
+        //$tries = $this->Paths->Tries->find('list', ['limit' => 200]);
+//        $users = $this->Paths->Users->find('list', ['limit' => 200]);
+        $this->set(compact('path', 'tries', 'users'));
         $this->set('_serialize', ['path']);
     }
 
@@ -125,15 +160,18 @@ class PathsController extends AppController
         $path = $this->Paths->newEntity();
         if ($this->request->is('post')) {
             $path = $this->Paths->patchEntity($path, $this->request->getData());
+
+            $users = TableRegistry::get('Users');
+            $user = $users->get($this->Auth->user('id'));
+            $path->users[] = $user ;
             if ($this->Paths->save($path)) {
                 $this->Flash->success(__('The path has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'Chapters' ,'action' => 'view-users', $chapterId]);
             }
             $this->Flash->error(__('The path could not be saved. Please, try again.'));
         }
         //$tries = $this->Paths->Tries->find('list', ['limit' => 200]);
-
 			 	$topics = $this->Paths->Chapters->Topics->find()->matching('Chapters',
  					function ($q) use ($chapterId) {
     				return $q
