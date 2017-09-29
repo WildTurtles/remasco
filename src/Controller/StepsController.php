@@ -125,15 +125,13 @@ class StepsController extends AppController
      * @param string|null $id Path id.
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function addFrom($pathId = null)
+    public function addFrom($pathId = null, $chapterId)
     {
         $step = $this->Steps->newEntity();
 
         if ($this->request->is('post')) {
 
-
             $step = $this->Steps->patchEntity($step, $this->request->getData());
-
 						//set the path
 						$this->loadModel('Paths');
   	   	 		//$path = $this->Paths->get($pathId);
@@ -144,23 +142,21 @@ class StepsController extends AppController
 						$query->matching('Paths', function ($q) use ($pathId) {
     						return $q->where(['Paths.id' => $pathId ])->order(['number' => 'DESC']);
 						});
-
-
 						$laststep = $query->first();
-
-
-						//$step->paths = [$path];
-						$step->number = $laststep->get('number') + 1;
+						if($laststep !== null){
+							$step->number = $laststep->get('number') + 1;
+						}
+						else
+						{
+							$step->number = 1;
+							$step->lock = 0;
+						}
 						$step->path_id = $pathId;
-						//debug($step);
-						//debug($laststep);
-						//debug($path);
-						//exit();
 
 						if ($this->Steps->save($step)) {
                 $this->Flash->success(__('The step has been saved.'));
 
-                return $this->redirect(['controller' => 'Paths', 'action' => 'view', $pathId]);
+                return $this->redirect(['controller' => 'Chapters', 'action' => 'view-users', $chapterId]);
             }
             $this->Flash->error(__('The step could not be saved. Please, try again.'));
         }

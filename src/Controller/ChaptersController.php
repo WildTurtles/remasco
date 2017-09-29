@@ -150,38 +150,20 @@ class ChaptersController extends AppController
      */
     public function viewUsers($id = null)
     {
-	
       $userId = $this->Auth->user('id');
 
 			$chapter = $this->Chapters->get($id, [
             'contain' => ['Paths', 'Paths.Steps','Paths.Steps.links', 'Paths.Users']
         ]);
 
-       /*$chapter = $this->Chapters->find('all')
-					->contain([
-						'Paths.Users'	=> function ($q) use ($userId) {
-								return $q->where(['Users.id' => $userId]);
-            	}
-					])->where(['Chapters.id' => $id]);
-*/
-				$topics = $this->Chapters->Topics->find('all');
-        $paths = $this->Chapters->Paths->find('all')->contain(['Steps' => ['sort' => ['Steps.number' => 'DESC'] ]]);
+        $paths = $this->Chapters->Paths->find('all')
+						->contain(['Steps' => ['sort' => ['Steps.number' => 'DESC'] ], 'Steps.Links'])
+						->matching('Users',
+          function ($q) use ($userId) {
+            return $q
+            ->where(['Users.id' => $userId]);
+          });
 
-
-			/*debug($chapter->toArray());
-			debug($topics->toArray());
-			debug($paths->toArray());
-			exit();*/
-
-/*			$userId = $this->Auth->user('id');
-				$users = $this->Chapters->Paths->Users->find('all')
-					->where(['Users.id' => $userId])
-       		->contain(['Paths' => ['Steps.links','Chapters' => 
-						function ($q) use ($id) {
-        			return $q->where(['Chapters.id' => $id]);
-    				}],
-					]);
-*/
 			 $this->set(compact('chapter','topics','paths'));
        $this->set('_serialize', ['chapter']);
 		}

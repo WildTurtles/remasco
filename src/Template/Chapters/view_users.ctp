@@ -34,10 +34,10 @@
               <div class="card-section">
                 <?php if (!empty($path->steps)): ?>
                   <?php foreach ($path->steps as $steps): ?>
-                    <p><?= h($steps->number) ?></p>
+                    <p><?= h($steps->number .' : Lock (1 pour lock)'. $steps->lock) ?></p>
                     <?php if (!empty($steps->links)): ?>
                       <?php foreach ($steps->links as $links): ?>
-                        <p>
+												 <p>
                           <?= h($links->name) ?> ->
                           <?= h($links->url) ?>
                         </p>
@@ -48,7 +48,7 @@
                 <h4><?= h($path->name) ?></h4>
                 <p><?= h($path->notes) ?></p>
 							 <?php if ($mygrp === 'teachers' || $mygrp === 'admin' ): ?>
-                <?php echo $this->Html->link(__('Add Step'), ['controller' => 'Steps', 'action' =>  'addFrom',  $path->id ]) ?>
+                <?php echo $this->Html->link(__('Add Step'), ['controller' => 'Steps', 'action' =>  'addFrom',  $path->id, $chapter->id ]) ?>
 							<?php endif; ?>
               </div>
             </div>

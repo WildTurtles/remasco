@@ -57,7 +57,11 @@
             </tr>
             <?php foreach ($topic->groups as $groups): ?>
             <tr>
+		<?php if ($mygrp === 'teachers' || $mygrp === 'admin' ): ?>
                 <td><?= $this->Html->link(h($groups->name), ['controller' => 'Groups', 'action' => 'view-classes', $groups->id]) ?></td>
+		<?php else: ?>
+                <td><?= h($groups->name) ?></td>
+		<?php endif; ?>
             </tr>
             <?php endforeach; ?>
         </table>
