@@ -55,7 +55,7 @@ class AppController extends Controller
                 'controller' => 'Users',
                 'action' => 'login'
             ],
-						'checkAuthIn' => 'Controller.initialize'
+						//'checkAuthIn' => 'Controller.initialize'
 
         ]);
 
@@ -83,11 +83,12 @@ class AppController extends Controller
         }
 			$this->loadComponent('Auth');
 			$this->setGroup();
+			$this->Auth->allow();
     }
 
     public function beforeFilter(Event $event)
     {
-      $this->Auth->allow(['index', 'view', 'edit', 'add','delete' ,'display', 'addfrom']);
+      $this->Auth->allow();
     }
 
    public function isAuthorized($user)
@@ -95,12 +96,12 @@ class AppController extends Controller
     // Default deny
 //    $result = false;
     // Admin can access every action TODO edit to be compliante
-    if (isset($user['role']) && $user['role'] === 'admin') {
-        $result = true;
-    }
+    //if (isset($user['role']) && $user['role'] === 'admin') {
+    //    $result = true;
+   // }
         $result = true;
 
-    return result;
+    return $result;
   }
 
 	public function setGroup()
