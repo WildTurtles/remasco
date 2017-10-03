@@ -43,6 +43,9 @@ class UsersTable extends Table
         $this->hasMany('Tries', [
             'foreignKey' => 'user_id'
         ]);
+        $this->hasMany('links_steps_users', [
+            'foreignKey' => 'user_id'
+        ]);
         $this->belongsToMany('Groups', [
             'foreignKey' => 'user_id',
             'targetForeignKey' => 'group_id',
@@ -63,6 +66,8 @@ class UsersTable extends Table
             'targetForeignKey' => 'link_id',
             'joinTable' => 'links_users'
         ]);
+
+
     }
 
     /**

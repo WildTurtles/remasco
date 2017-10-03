@@ -47,6 +47,9 @@ class StepsTable extends Table
             'foreignKey' => 'path_id',
             'joinType' => 'INNER'
         ]);
+        $this->hasMany('links_steps_users', [
+            'foreignKey' => 'step_id'
+        ]);
         $this->belongsToMany('Links', [
             'foreignKey' => 'step_id',
             'targetForeignKey' => 'link_id',

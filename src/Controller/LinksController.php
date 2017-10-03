@@ -112,4 +112,19 @@ class LinksController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function indexLinks()
+    {
+        $links = $this->paginate($this->Links);
+
+        $this->set(compact('links'));
+        $this->set('_serialize', ['links']);
+    }
+
+
 }

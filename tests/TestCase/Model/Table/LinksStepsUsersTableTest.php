@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\LinksTable;
+use App\Model\Table\LinksStepsUsersTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\LinksTable Test Case
+ * App\Model\Table\LinksStepsUsersTable Test Case
  */
-class LinksTableTest extends TestCase
+class LinksStepsUsersTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\LinksTable
+     * @var \App\Model\Table\LinksStepsUsersTable
      */
-    public $Links;
+    public $LinksStepsUsers;
 
     /**
      * Fixtures
@@ -24,15 +24,7 @@ class LinksTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.links',
         'app.links_steps_users',
-        'app.steps',
-        'app.paths',
-        'app.chapters',
-        'app.chapters_paths',
-        'app.topics',
-        'app.groups',
-        'app.groups_topics',
         'app.users',
         'app.tries',
         'app.answers_questions',
@@ -42,18 +34,27 @@ class LinksTableTest extends TestCase
         'app.answers',
         'app.questions_tries',
         'app.multiple_choice_questions_questions',
-        'app.multiple_choice_questions_steps',
-        'app.multiple_choice_questions_tries',
-        'app.paths_tries',
+        'app.steps',
+        'app.paths',
+        'app.chapters',
+        'app.chapters_paths',
+        'app.topics',
+        'app.groups',
+        'app.groups_topics',
         'app.groups_users',
-        'app.paths_users',
-        'app.topics_users',
-        'app.links_users',
         'app.topics_chapters',
+        'app.topics_users',
+        'app.paths_tries',
+        'app.paths_users',
+        'app.links_steps_users',
+        'app.links',
         'app.links_steps',
+        'app.links_users',
+        'app.multiple_choice_questions_steps',
         'app.opened_questions',
         'app.expected_answers',
-        'app.opened_questions_steps'
+        'app.opened_questions_steps',
+        'app.multiple_choice_questions_tries'
     ];
 
     /**
@@ -64,8 +65,8 @@ class LinksTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Links') ? [] : ['className' => LinksTable::class];
-        $this->Links = TableRegistry::get('Links', $config);
+        $config = TableRegistry::exists('LinksStepsUsers') ? [] : ['className' => LinksStepsUsersTable::class];
+        $this->LinksStepsUsers = TableRegistry::get('LinksStepsUsers', $config);
     }
 
     /**
@@ -75,7 +76,7 @@ class LinksTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Links);
+        unset($this->LinksStepsUsers);
 
         parent::tearDown();
     }

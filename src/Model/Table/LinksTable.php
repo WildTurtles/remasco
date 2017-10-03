@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Links Model
  *
  * @property \App\Model\Table\StepsTable|\Cake\ORM\Association\BelongsToMany $Steps
- * @property |\Cake\ORM\Association\BelongsToMany $Users
+ * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsToMany $Users
  *
  * @method \App\Model\Entity\Link get($primaryKey, $options = [])
  * @method \App\Model\Entity\Link newEntity($data = null, array $options = [])

@@ -4,19 +4,20 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Link Entity
+ * LinksStepsUser Entity
  *
- * @property string $id
- * @property string $name
- * @property string $url
+ * @property string $user_id
+ * @property string $step_id
+ * @property string $link_id
+ * @property bool $lock
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $updated
  *
- * @property \App\Model\Entity\LinksStepsUser[] $links_steps_users
- * @property \App\Model\Entity\Step[] $steps
- * @property \App\Model\Entity\User[] $users
+ * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\Step $step
+ * @property \App\Model\Entity\Link $link
  */
-class Link extends Entity
+class LinksStepsUser extends Entity
 {
 
     /**
@@ -30,6 +31,8 @@ class Link extends Entity
      */
     protected $_accessible = [
         '*' => true,
-        'id' => false
+        'user_id' => false,
+        'step_id' => false,
+        'link_id' => false
     ];
 }

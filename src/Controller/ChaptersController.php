@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Chapters Controller
@@ -155,23 +156,32 @@ class ChaptersController extends AppController
      */
     public function viewUsers($id = null)
     {
-//      $chapter = $this->Chapters->newEntity();
-      $userId = $this->Auth->user('id');
-//			debug($id);
-			$chapter = $this->Chapters->get($id, [
-            'contain' => ['Paths', 'Paths.Steps','Paths.Steps.links', 'Paths.Users']
+        $userId = $this->Auth->user('id');
+	    $chapter = $this->Chapters->get($id, [
+            'contain' => ['Paths', 'Paths.Steps','Paths.Steps.links', 'Paths.Users',]
         ]);
-
         $paths = $this->Chapters->Paths->find('all')
-						->contain(['Steps' => ['sort' => ['Steps.number' => 'DESC'] ], 'Steps.Links'])
+						->contain(['Steps' => ['sort' => ['Steps.number' => 'ASC'] ],
+                                  'Steps.Links',
+                                  'Chapters'])
 						->matching('Users',
-          function ($q) use ($userId) {
-            return $q
-            ->where(['Users.id' => $userId]);
-          });
+                            function ($q) use ($userId) {
+                                return $q->where(['Users.id' => $userId]);
+                            });
+        $linksStepsUsers = TableRegistry::get('LinksStepsUsers');
+        $linkslocks = $linksStepsUsers->find()->where(['user_id' => $userId]);
 
-			 $this->set(compact('chapter','topics','paths'));
-       $this->set('_serialize', ['chapter']);
-		}
-
+        $lockLk = array();
+//        debug($linkslocks);
+        foreach($linkslocks as $lk)
+        {
+            $lockLk[] = $lk;
+//            debug($lk);
+        }
+//        debug($lockLk); exit;
+        $this->set('linkslocks',$lockLk);
+        $this->set(compact('chapter','topics','paths'));
+        $this->set('_serialize', ['chapter']);
+        $this->set('_serialize', ['$linkslocks']);
+	}
 }

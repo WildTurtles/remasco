@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
+
 
 /**
  * Steps Controller
@@ -132,31 +134,72 @@ class StepsController extends AppController
         if ($this->request->is('post')) {
 
             $step = $this->Steps->patchEntity($step, $this->request->getData());
-						//set the path
-						$this->loadModel('Paths');
-  	   	 		//$path = $this->Paths->get($pathId);
+			//set the path
+			$this->loadModel('Paths');
 
-						//set the number
-						$query = $this->Steps->find()
-												->order(['number' => 'DESC']);
-						$query->matching('Paths', function ($q) use ($pathId) {
-    						return $q->where(['Paths.id' => $pathId ])->order(['number' => 'DESC']);
-						});
-						$laststep = $query->first();
-						if($laststep !== null){
-							$step->number = $laststep->get('number') + 1;
-						}
-						else
-						{
-							$step->number = 1;
-							$step->lock = 0;
-						}
-						$step->path_id = $pathId;
+   	 		//$path = $this->Paths->get($pathId);
+			//set the number
+			$query = $this->Steps->find()
+                                 ->order(['number' => 'DESC']);
+            $query->matching('Paths', function ($q) use ($pathId) {
+    		    return $q->where(['Paths.id' => $pathId ])->order(['number' => 'DESC']);
+            });
+			$laststep = $query->first();
 
-						if ($this->Steps->save($step)) {
-                $this->Flash->success(__('The step has been saved.'));
-
-                return $this->redirect(['controller' => 'Chapters', 'action' => 'view-users', $chapterId]);
+//                        debug($laststep);exit;
+			if($laststep !== null){
+			    $step->number = $laststep->get('number') + 1;
+			}
+			else
+			{
+			    $step->number = 1;
+			    $step->lock = 0;
+			}
+			$step->path_id = $pathId;
+            $userId= $this->Auth->user('id');
+            debug($userId);
+			if ($this->Steps->save($step)){
+                $userLocks = TableRegistry::get('LinksStepsUsers');
+                foreach($step->links as $link)
+                {
+                    $userLock = $userLocks->newEntity();
+                    $userLock->user_id = $userId;
+                    $userLock->step_id =$step->id;
+                    $userLock->lock = 0;
+                    $userLock->link_id = $link->id;
+//                    echo "User connecté";
+//                    debug($userLock);
+                    if (!$userLocks->save($userLock))
+                    {
+                        $this->Flash->error(__('The step could not be saved. Please, try again.'));
+                        return $this->redirect(['controller' => 'Chapters', 'action' => 'view-users', $chapterId]);
+                    }
+                }
+    			$path = $this->Steps->Paths->get($step->path_id, [
+                                    'contain' => ['Users'=> function ($q) use ($userId) {
+                    return $q->where(['Users.id !=' => $userId]);
+                }]]);
+                foreach($path->users as $user)
+                {
+                    foreach($step->links as $link)
+                    {
+                        $userLck = $userLocks->newEntity();
+                        $userLck->user_id = $user->id;
+                        $userLck->step_id = $step->id;
+                        $userLck->lock = '1';
+                        $userLck->link_id = $link->id;
+//                        echo "User du groupe";
+//                        debug($userLck);
+                        if (!$userLocks->save($userLck))
+                        {
+                            $this->Flash->error(__('The step could not be saved. Please, try again.'));
+                            return $this->redirect(['controller' => 'Chapters', 'action' => 'view-users', $chapterId]);
+                        }
+                    }
+               }
+//               exit;
+              $this->Flash->success(__('The step has been saved.'));
+              return $this->redirect(['controller' => 'Chapters', 'action' => 'view-users', $chapterId]);
             }
             $this->Flash->error(__('The step could not be saved. Please, try again.'));
         }
@@ -167,6 +210,44 @@ class StepsController extends AppController
 //        $this->set(compact('step', 'paths', 'links', 'multipleChoiceQuestions', 'openedQuestions'));
         $this->set(compact('step', 'links', 'multipleChoiceQuestions', 'openedQuestions'));
         $this->set('_serialize', ['step']);
+    }
+
+    public function unlock($id = null,  $linkId = null , $chapterId = null)
+    {
+        $step = $this->Steps->get($id, [
+            'contain' => ['Links']
+        ]);
+        $link = $this->Steps->Links->get($linkId);
+        $users = TableRegistry::get('Users');
+        $user = $users->get($this->Auth->user('id'));
+
+        $userLocks = TableRegistry::get('LinksStepsUsers');
+        $userLock = $userLocks->find()
+                              ->where(['user_id' => $this->Auth->user('id')])
+                              ->ANDwhere(['link_id' => $linkId])
+                              ->ANDwhere(['step_id' => $id])->first();
+
+        if($userLock != null)
+        {
+
+            //debug($userLock);
+            $userLock->lock = false;
+            //debug($userLock);
+            if($userLocks->save($userLock))
+            {
+
+                return $this->redirect($link->url);
+            }
+            else
+            {
+            $this->Flash->error(__('The step could not be saved. Please, try again.'));
+            return $this->redirect(['controller' => 'Chapters', 'action' => 'view-users', $chapterId]);
+            }
+        }
+        else
+        {
+          return $this->redirect(['controller' => 'Chapters', 'action' => 'view-users', $chapterId]);
+        }
     }
 
 }
