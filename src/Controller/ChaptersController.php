@@ -160,7 +160,32 @@ class ChaptersController extends AppController
 	    $chapter = $this->Chapters->get($id, [
             'contain' => ['Paths', 'Paths.Steps','Paths.Steps.links', 'Paths.Users',]
         ]);
+
+       /*$chapter =  $this->Chapters->get($id,[
+                                    'contain' => ['Paths']
+                                    ]);*/
+                                           /*->contain([
+                                                'Paths.Steps' => ['sort' => ['Steps.number' => 'ASC'] ],
+                                                'Paths.Steps.Links'
+                                            ])
+                                            ->matching('Paths.Users',
+                                                function ($q) use ($userId) {
+                                                    return $q->where(['Users.id' => $userId]);
+                                            });*/
+
+            //debug($chapter);
+
+        //$chaptersId = array();
+        foreach($chapter->paths as $path)
+        {
+            //debug($path);
+            $chaptersId[] = $path->id;
+        }
+
+//        $paths = $chapter->Paths->find('all')
+        if(!empty($chaptersId)){
         $paths = $this->Chapters->Paths->find('all')
+                        ->where(['Paths.id IN' => $chaptersId])
 						->contain(['Steps' => ['sort' => ['Steps.number' => 'ASC'] ],
                                   'Steps.Links',
                                   'Chapters'])
@@ -168,6 +193,13 @@ class ChaptersController extends AppController
                             function ($q) use ($userId) {
                                 return $q->where(['Users.id' => $userId]);
                             });
+       }
+    /*    $paths->matching('Chapters',
+                           function ($q) use ($id) {
+                                return $q->where(['Chapters.id' => $id]);
+                            });*/
+
+//exit();
         $linksStepsUsers = TableRegistry::get('LinksStepsUsers');
         $linkslocks = $linksStepsUsers->find()->where(['user_id' => $userId]);
 

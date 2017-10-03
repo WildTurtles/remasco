@@ -158,15 +158,31 @@ class PathsController extends AppController
     public function addFrom($chapterId = null )
     {
         $path = $this->Paths->newEntity();
+
         if ($this->request->is('post')) {
-            $path = $this->Paths->patchEntity($path, $this->request->getData());
+
+            $data = $this->request->getData();
+            //debug($data);
+
+            $data['chapters'] = ['_ids' => [ 0 => $chapterId ]];
+
+            //debug($data);
+
+            $pth = $this->Paths->patchEntity($path, $data);
 
             $users = TableRegistry::get('Users');
             $user = $users->get($this->Auth->user('id'));
-            $path->users[] = $user ;
-            if ($this->Paths->save($path)) {
+            $pth->users[] = $user ;
+            /*$chapters = TableRegistry::get('Chapters');
+            $chapter = $chapters->get($chapterId);
+            debug($chapter);
+            $pth->chapters[] = $chapter;
+            $pth->dirty('chapters', true);*/
+            //debug($pth);
+            //debug($chapterId);
+            if ($this->Paths->save($pth)) {
                 $this->Flash->success(__('The path has been saved.'));
-
+                //exit();
                 return $this->redirect(['controller' => 'Chapters' ,'action' => 'view-users', $chapterId]);
             }
             $this->Flash->error(__('The path could not be saved. Please, try again.'));
