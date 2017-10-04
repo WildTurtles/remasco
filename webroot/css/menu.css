@@ -1,0 +1,57 @@
+#profil{
+  max-width: 50px;
+}
+
+.top-bar {
+  background-color: #333333;
+}
+
+.top-bar ul {
+  background-color: #333333;
+}
+
+.top-bar li {
+  border: none;
+}
+
+li .menu-text{
+  color: #fcfcfc;
+  font-size: 1em;
+}
+
+
+.menu li a{
+    //background-color: #2BA6CB;
+}
+
+h1 {
+  color: #fcfcfc;
+}
+
+.menubar{
+  color: #fcfcfc;
+}
+
+
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/*ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+        width: 100%;
+}*/

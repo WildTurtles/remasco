@@ -5,9 +5,6 @@
   */
 ?>
 
-<?php echo $this->element('menu'); ?>
-
-
 <div class="groups index large-9 medium-8 columns content">
     <h3><?= __('Classes') ?></h3>
 		<?php echo $this->Html->link(__('Add Class (group in physical class)'), ['controller' => 'Groups', 'action' =>  'add' ]) ?>

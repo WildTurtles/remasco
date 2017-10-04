@@ -4,7 +4,6 @@
   * @var \App\Model\Entity\Link[]|\Cake\Collection\CollectionInterface $links
   */
 ?>
-<?php  echo $this->element('menu'); ?>
 
 <div class="links index large-9 medium-8 columns content">
     <h3><?= __('Links') ?></h3>

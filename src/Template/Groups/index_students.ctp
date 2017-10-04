@@ -1,4 +1,3 @@
-<?php echo $this->element('menu'); ?>
 
 <?php if (!empty($groups)): ?>
 <?php foreach ($groups as $group): ?>

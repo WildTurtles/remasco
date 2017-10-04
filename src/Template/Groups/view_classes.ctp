@@ -5,9 +5,6 @@
   */
 ?>
 
-
-<?php echo $this->element('menu'); ?>
-
 <div class="groups view large-9 medium-8 columns content">
     <h3><?= h($group->name) ?></h3>
     <?php echo $this->Html->link(__('Add people, edit the group. '), ['controller' => 'Groups', 'action' =>  'edit',$group->id ]) ?>

@@ -5,8 +5,6 @@
   */
 ?>
 
-<?php echo $this->element('menu'); ?>
-
 <div class="topics index large-9 medium-8 columns content">
     <h3><?= __('Topics') ?></h3>
 

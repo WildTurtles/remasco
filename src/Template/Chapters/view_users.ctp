@@ -8,8 +8,6 @@
 <?php //debug($chapter); exit; ?> 
 <?php //debug($linkslocks); exit; ?> 
 
-<?php echo $this->element('menu'); ?>
-
 <div class="chapters view large-9 medium-8 columns content">
 
 <table class="vertical-table">

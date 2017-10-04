@@ -3,9 +3,12 @@
   * @var \App\View\AppView $this
   * @var \App\Model\Entity\User $user
   */
-?>
 
-<?php echo $this->element('menu'); ?>
+ $this->Html->css('menu.css', ['block' => true]);
+ $this->Html->css('view_profil', ['block' => true]);
+
+
+?>
 
 <div class="users view large-9 medium-8 columns content">
     <h3><?= h($user->name) ?></h3>

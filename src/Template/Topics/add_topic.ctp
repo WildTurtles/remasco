@@ -3,7 +3,6 @@
   * @var \App\View\AppView $this
   */
 ?>
-<?php echo $this->element('menu'); ?>
 
 <div class="topics form large-9 medium-8 columns content">
     <?= $this->Form->create($topic) ?>

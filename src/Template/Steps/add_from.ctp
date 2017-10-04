@@ -4,7 +4,6 @@
   */
 ?>
 
-<?php echo $this->element('menu') ?>
 
 <div class="steps form large-9 medium-8 columns content">
     <?= $this->Form->create($step) ?>
