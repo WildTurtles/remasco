@@ -199,6 +199,9 @@ class UsersController extends AppController
 
     public function login()
     {
+        if ($this->Auth->user()) {
+            return $this->redirect($this->Auth->redirectUrl());
+        }else{
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user){
@@ -206,6 +209,7 @@ class UsersController extends AppController
                 return $this->redirect($this->Auth->redirectUrl());
             }
             $this->Flash->error(__('Invalid username or password, try again'));
+        }
         }
 
     }
