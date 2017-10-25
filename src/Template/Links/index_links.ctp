@@ -7,6 +7,8 @@
 
 <div class="links index large-9 medium-8 columns content">
     <h3><?= __('Links') ?></h3>
+    <?= $this->Html->link(__('New Link'), ['action' => 'addLinks']) ?>
+
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -20,12 +22,11 @@
         <tbody>
             <?php foreach ($links as $link): ?>
             <tr>
-                <td><?= $this->Html->link(h($link->name), ['action' => 'view', $link->id]) ?></td>
+                <td><?= h($link->name) ?></td>
                 <td><?= h($link->url) ?></td>
                 <td><?= h($link->created) ?></td>
                 <td><?= h($link->updated) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $link->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $link->id], ['confirm' => __('Are you sure you want to delete # {0}?', $link->name)]) ?>
                 </td>
             </tr>

@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Links Controller
@@ -120,10 +121,36 @@ class LinksController extends AppController
      */
     public function indexLinks()
     {
-        $links = $this->paginate($this->Links);
+
+        $query = $this->Links->find()
+                  ->innerJoinWith('Users')
+                  ->distinct()
+                  ->where(['Users.id' => $this->Auth->user('id')]);
+        $links = $this->paginate($query);
 
         $this->set(compact('links'));
         $this->set('_serialize', ['links']);
+    }
+
+    public function addLinks()
+    {
+        $link = $this->Links->newEntity();
+        if ($this->request->is('post')) {
+            $this->Links->save($link, ['associated' => ['Users']]);
+            $link = $this->Links->patchEntity($link, $this->request->getData());
+            $users = TableRegistry::get('Users');
+            $user = $users->get($this->Auth->user('id'));
+            $this->Links->Users->link($link, [$user]);
+            if ($this->Links->save($link)) {
+                $this->Flash->success(__('The link has been saved.'));
+                return $this->redirect(['action' => 'indexLinks']);
+            }
+            $this->Flash->error(__('The link could not be saved. Please, try again.'));
+        }
+        $steps = $this->Links->Steps->find('list', ['limit' => 200]);
+        $users = $this->Links->Users->find('list', ['limit' => 200]);
+        $this->set(compact('link', 'steps', 'users'));
+        $this->set('_serialize', ['link']);
     }
 
 

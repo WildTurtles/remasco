@@ -72,7 +72,7 @@
                                             if($lck->step_id == $step->id
                                                 && $lck->link_id == $link->id
                                                 && $lck->lock == false)
-                                            {
+                                            { debug ($lck);
                     ?>
                     <p>
                         <?php echo $this->Html->link( h($link->name.' : is unlock' ) , $link->url , array('target' => '_blank')) ?>

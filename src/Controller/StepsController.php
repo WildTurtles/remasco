@@ -157,7 +157,7 @@ class StepsController extends AppController
 			}
 			$step->path_id = $pathId;
             $userId= $this->Auth->user('id');
-            debug($userId);
+//            debug($userId);
 			if ($this->Steps->save($step)){
                 $userLocks = TableRegistry::get('LinksStepsUsers');
                 foreach($step->links as $link)
