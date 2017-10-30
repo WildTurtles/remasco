@@ -184,8 +184,7 @@ class TopicsController extends AppController
     {
         $topic = $this->Topics->newEntity();
         if ($this->request->is('post')) {
- 						$this->Topics->save($topic, ['associated' => ['Users']]);
-
+			$this->Topics->save($topic, ['associated' => ['Users']]);
             $topic = $this->Topics->patchEntity($topic, $this->request->getData());
             $users = TableRegistry::get('Users');
 			$user = $users->get($this->Auth->user('id'));
