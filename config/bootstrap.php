@@ -75,6 +75,8 @@ use Cake\Utility\Security;
 try {
     Configure::config('default', new PhpConfig());
     Configure::load('app', 'default', false);
+    Configure::load('install', 'default');
+    Configure::load('wiki', 'default');
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
 }
@@ -220,3 +222,6 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+
+
+Plugin::load('Migrations');

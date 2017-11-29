@@ -17,7 +17,7 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-
+use Cake\Core\Configure;
 
 /**
  * Application Controller
@@ -88,7 +88,9 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
-      //$this->Auth->allow();
+      $wikiLink = Configure::read('Wiki.link');
+      $this->set('wikiLink', $wikiLink);
+      $this->Auth->allow();
     }
 
    public function isAuthorized($user)
