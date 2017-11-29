@@ -155,16 +155,32 @@ class GroupsController extends AppController
         $this->set('_serialize', ['group']);
     }
 
-    public function indexTeachers()
+    public function indexAdmin()
     {
-				$groups = $this->paginate($this->groupUsers('teachers'));
+		$groups = $this->paginate($this->groupUsers('admin'));
 
         $this->set(compact('groups'));
         $this->set('_serialize', ['groups']);
     }
 
-		private function groupUsers($groupName)
-		{
+    public function indexTeachers()
+    {
+		$groups = $this->paginate($this->groupUsers('teachers'));
+
+        $this->set(compact('groups'));
+        $this->set('_serialize', ['groups']);
+    }
+
+    public function indexStudents()
+    {
+		$groups = $this->paginate($this->groupUsers('students'));
+
+        $this->set(compact('groups'));
+        $this->set('_serialize', ['groups']);
+    }
+
+	private function groupUsers($groupName)
+	{
         $grp = $this->Groups->find('all', [
             'contain' => ['Users']
         ])->where(['name IN' => $groupName]);
@@ -172,11 +188,4 @@ class GroupsController extends AppController
 			return $grp;
 		}
 
-    public function indexStudents()
-    {
-				$groups = $this->paginate($this->groupUsers('students'));
-
-        $this->set(compact('groups'));
-        $this->set('_serialize', ['groups']);
-    }
 }

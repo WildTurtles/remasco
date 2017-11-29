@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Users Controller
@@ -218,5 +219,103 @@ class UsersController extends AppController
     {
         return $this->redirect($this->Auth->logout());
     }
+
+    /**
+     * Add method
+     *
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function addAdmin()
+    {
+        $user = $this->Users->newEntity();
+
+        if ($this->request->is('post')) {
+            $this->Users->save($user, ['associated' => ['Groups']]);
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+
+            $group = $this->Users->Groups->find('all')
+                        ->where(['Groups.name' => 'admin' ])
+                        ->first();
+
+            $this->Users->Groups->link($user, [$group]);
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('The user has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        }
+        $groups = $this->Users->Groups->find('list', ['limit' => 200]);
+        $paths = $this->Users->Paths->find('list', ['limit' => 200]);
+        $topics = $this->Users->Topics->find('list', ['limit' => 200]);
+        $links = $this->Users->Links->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'groups', 'paths', 'topics','links'));
+        $this->set('_serialize', ['user']);
+    }
+
+    /**
+     * Add method
+     *
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function addTeacher()
+    {
+        $user = $this->Users->newEntity();
+        if ($this->request->is('post')) {
+            $this->Users->save($user, ['associated' => ['Groups']]);
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+
+            $group = $this->Users->Groups->find('all')
+                        ->where(['Groups.name' => 'teachers' ])
+                        ->first();
+
+            $this->Users->Groups->link($user, [$group]);
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('The user has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        }
+        $groups = $this->Users->Groups->find('list', ['limit' => 200]);
+        $paths = $this->Users->Paths->find('list', ['limit' => 200]);
+        $topics = $this->Users->Topics->find('list', ['limit' => 200]);
+        $links = $this->Users->Links->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'groups', 'paths', 'topics','links'));
+        $this->set('_serialize', ['user']);
+    }
+
+    /**
+     * Add method
+     *
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function addStudents()
+    {
+        $user = $this->Users->newEntity();
+        if ($this->request->is('post')) {
+            $this->Users->save($user, ['associated' => ['Groups']]);
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+
+            $group = $this->Users->Groups->find('all')
+                        ->where(['Groups.name' => 'students' ])
+                        ->first();
+
+            $this->Users->Groups->link($user, [$group]);
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('The user has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        }
+        $groups = $this->Users->Groups->find('list', ['limit' => 200]);
+        $paths = $this->Users->Paths->find('list', ['limit' => 200]);
+        $topics = $this->Users->Topics->find('list', ['limit' => 200]);
+        $links = $this->Users->Links->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'groups', 'paths', 'topics','links'));
+        $this->set('_serialize', ['user']);
+    }
+
 
 }
