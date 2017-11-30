@@ -290,7 +290,7 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function addStudents()
+    public function addStudent()
     {
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
@@ -316,6 +316,5 @@ class UsersController extends AppController
         $this->set(compact('user', 'groups', 'paths', 'topics','links'));
         $this->set('_serialize', ['user']);
     }
-
 
 }
