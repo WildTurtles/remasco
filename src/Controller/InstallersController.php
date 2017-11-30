@@ -65,6 +65,7 @@ class InstallersController extends AppController
             $group = $this->Users->Groups->find('all')
                         ->where(['Groups.name' => 'admin' ])
                         ->first();
+            //TODO check if group is null
             $this->Users->Groups->link($user, [$group]);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
