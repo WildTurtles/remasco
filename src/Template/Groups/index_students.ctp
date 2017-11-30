@@ -6,7 +6,7 @@
     <div class="related">
         <h4><?= __('Related Users') ?></h4>
         <?php if ($mygrp === 'admin'): ?>
-            <?php echo $this->Html->link(__('Add a Teacher'), ['controller' => 'Users', 'action' => 'addTeacher']) ?>
+            <?php echo $this->Html->link(__('Add a Student'), ['controller' => 'Users', 'action' => 'addTeacher']) ?>
         <?php endif; ?>
         <?php if (!empty($group->users)): ?>
         <table cellpadding="0" cellspacing="0">
@@ -25,7 +25,7 @@
                 <td><?= h($user->updated) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Users', 'action' => 'edit', $user->id]) ?>
-										<?= $this->Form->postLink(__('Delete'), ['controller' => 'Users', 'action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0} {1}?', $user->lastname, $user->firstname)]) ?>
+					<?= $this->Form->postLink(__('Delete'), ['controller' => 'Users', 'action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0} {1}?', $user->lastname, $user->firstname)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
