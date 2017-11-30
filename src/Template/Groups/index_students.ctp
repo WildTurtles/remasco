@@ -6,7 +6,7 @@
     <div class="related">
         <h4><?= __('Related Users') ?></h4>
         <?php if ($mygrp === 'admin'): ?>
-            <?php echo $this->Html->link(__('Add a Student'), ['controller' => 'Users', 'action' => 'addStudents']) ?>
+            <?php echo $this->Html->link(__('Add a Student'), ['controller' => 'Users', 'action' => 'addStudent']) ?>
         <?php endif; ?>
         <?php if (!empty($group->users)): ?>
         <table cellpadding="0" cellspacing="0">
