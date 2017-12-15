@@ -115,7 +115,7 @@ class GroupsController extends AppController
             $this->Flash->error(__('The group could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index-classes']);
+        return $this->redirect(['action' => 'indexClasses']);
     }
 
     /**
