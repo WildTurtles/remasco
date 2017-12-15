@@ -55,7 +55,7 @@ class StepsTable extends Table
             'targetForeignKey' => 'link_id',
             'joinTable' => 'links_steps'
         ]);
-        $this->belongsToMany('MultipleChoiceQuestions', [
+/*        $this->belongsToMany('MultipleChoiceQuestions', [
             'foreignKey' => 'step_id',
             'targetForeignKey' => 'multiple_choice_question_id',
             'joinTable' => 'multiple_choice_questions_steps'
@@ -64,7 +64,7 @@ class StepsTable extends Table
             'foreignKey' => 'step_id',
             'targetForeignKey' => 'opened_question_id',
             'joinTable' => 'opened_questions_steps'
-        ]);
+        ]);*/
     }
 
     /**

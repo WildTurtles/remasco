@@ -47,11 +47,11 @@ class MultipleChoiceQuestionsTable extends Table
             'targetForeignKey' => 'question_id',
             'joinTable' => 'multiple_choice_questions_questions'
         ]);
-        $this->belongsToMany('Steps', [
+/*        $this->belongsToMany('Steps', [
             'foreignKey' => 'multiple_choice_question_id',
             'targetForeignKey' => 'step_id',
             'joinTable' => 'multiple_choice_questions_steps'
-        ]);
+        ]);*/
         $this->belongsToMany('Tries', [
             'foreignKey' => 'multiple_choice_question_id',
             'targetForeignKey' => 'try_id',

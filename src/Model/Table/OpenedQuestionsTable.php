@@ -45,11 +45,11 @@ class OpenedQuestionsTable extends Table
             'foreignKey' => 'expected_answer_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsToMany('Steps', [
+/*        $this->belongsToMany('Steps', [
             'foreignKey' => 'opened_question_id',
             'targetForeignKey' => 'step_id',
             'joinTable' => 'opened_questions_steps'
-        ]);
+        ]);*/
     }
 
     /**

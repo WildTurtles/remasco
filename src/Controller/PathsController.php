@@ -78,7 +78,8 @@ class PathsController extends AppController
     public function edit($id = null, $chapterId =null)
     {
         $path = $this->Paths->get($id, [
-            'contain' => ['Chapters', 'Tries', 'Users', 'Steps', 'Steps.Links']
+            'contain' => ['Chapters', 'Users', 'Steps', 'Steps.Links']
+            /*'contain' => ['Chapters', 'Tries', 'Users', 'Steps', 'Steps.Links']*/
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $path = $this->Paths->patchEntity($path, $this->request->getData());

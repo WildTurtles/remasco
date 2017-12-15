@@ -67,9 +67,10 @@ class StepsController extends AppController
         }
         $paths = $this->Steps->Paths->find('list', ['limit' => 200]);
         $links = $this->Steps->Links->find('list', ['limit' => 200]);
-        $multipleChoiceQuestions = $this->Steps->MultipleChoiceQuestions->find('list', ['limit' => 200]);
-        $openedQuestions = $this->Steps->OpenedQuestions->find('list', ['limit' => 200]);
-        $this->set(compact('step', 'paths', 'links', 'multipleChoiceQuestions', 'openedQuestions'));
+      //  $multipleChoiceQuestions = $this->Steps->MultipleChoiceQuestions->find('list', ['limit' => 200]);
+      //  $openedQuestions = $this->Steps->OpenedQuestions->find('list', ['limit' => 200]);
+        $this->set(compact('step', 'paths', 'links'));
+//        $this->set(compact('step', 'paths', 'links', 'multipleChoiceQuestions', 'openedQuestions'));
         $this->set('_serialize', ['step']);
     }
 
@@ -98,7 +99,8 @@ class StepsController extends AppController
         $links = $this->Steps->Links->find('list', ['limit' => 200]);
         $multipleChoiceQuestions = $this->Steps->MultipleChoiceQuestions->find('list', ['limit' => 200]);
         $openedQuestions = $this->Steps->OpenedQuestions->find('list', ['limit' => 200]);
-        $this->set(compact('step', 'paths', 'links', 'multipleChoiceQuestions', 'openedQuestions'));
+        $this->set(compact('step', 'paths', 'links'));
+//        $this->set(compact('step', 'paths', 'links', 'multipleChoiceQuestions', 'openedQuestions'));
         $this->set('_serialize', ['step']);
     }
 
@@ -205,10 +207,10 @@ class StepsController extends AppController
         }
 //      $paths = $this->Steps->Paths->find('list', ['limit' => 200]);
         $links = $this->Steps->Links->find('list', ['limit' => 200]);
-        $multipleChoiceQuestions = $this->Steps->MultipleChoiceQuestions->find('list', ['limit' => 200]);
-        $openedQuestions = $this->Steps->OpenedQuestions->find('list', ['limit' => 200]);
-//        $this->set(compact('step', 'paths', 'links', 'multipleChoiceQuestions', 'openedQuestions'));
-        $this->set(compact('step', 'links', 'multipleChoiceQuestions', 'openedQuestions'));
+//        $multipleChoiceQuestions = $this->Steps->MultipleChoiceQuestions->find('list', ['limit' => 200]);
+//        $openedQuestions = $this->Steps->OpenedQuestions->find('list', ['limit' => 200]);
+ //       $this->set(compact('step', 'paths', 'links', 'multipleChoiceQuestions', 'openedQuestions'));
+        $this->set(compact('step', 'links'));
         $this->set('_serialize', ['step']);
     }
 

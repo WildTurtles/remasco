@@ -36,9 +36,7 @@ class UsersController extends AppController
      */
     public function view($id = null)
     {
-        $user = $this->Users->get($id, [
-            'contain' => ['Groups', 'Paths', 'Topics', 'Tries', 'Links']
-        ]);
+        $user = $this->Users->get($id);
 
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
@@ -115,7 +113,7 @@ class UsersController extends AppController
             $this->Flash->error(__('The user could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect($this->referer());
     }
 
     /**
@@ -241,7 +239,7 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
-                return $this->redirect(['action' => 'indexAdmin']);
+                return $this->redirect(['Controller' => 'Groups' ,'action' => 'indexAdmin']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
@@ -273,7 +271,7 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
-                return $this->redirect(['Controller' => 'Groups','action' => 'indexTeachers']);
+                return $this->redirect(['controller' => 'Groups','action' => 'indexTeachers']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
@@ -305,7 +303,7 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
-                return $this->redirect(['Controller' => 'Groups' ,'action' => 'indexStudents']);
+                return $this->redirect(['controller' => 'Groups' ,'action' => 'indexStudents']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
