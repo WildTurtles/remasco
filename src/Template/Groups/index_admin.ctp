@@ -26,7 +26,6 @@
                 <td><?= h($user->created) ?></td>
                 <td><?= h($user->updated) ?></td>
                 <td class="actions">
-                    <?php// echo $this->Html->link(__('Edit'), ['controller' => 'Users', 'action' => 'edit', $user->id]) ?>
 					<?= $this->Form->postLink(__('Delete'), ['controller' => 'Users', 'action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0} {1}?', $user->lastname, $user->firstname)]) ?>
                 </td>
             </tr>
