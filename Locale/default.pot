@@ -1,0 +1,1878 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2018-03-02 15:59+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/AnswersController.php:57;84
+msgid "The answer has been saved."
+msgstr ""
+
+#: Controller/AnswersController.php:61;88
+msgid "The answer could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AnswersController.php:108
+msgid "The answer has been deleted."
+msgstr ""
+
+#: Controller/AnswersController.php:110
+msgid "The answer could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/AppreciationsController.php:57;83
+msgid "The appreciation has been saved."
+msgstr ""
+
+#: Controller/AppreciationsController.php:61;87
+msgid "The appreciation could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AppreciationsController.php:106
+msgid "The appreciation has been deleted."
+msgstr ""
+
+#: Controller/AppreciationsController.php:108
+msgid "The appreciation could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ChaptersController.php:57;85;136
+msgid "The chapter has been saved."
+msgstr ""
+
+#: Controller/ChaptersController.php:61;89;140
+msgid "The chapter could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ChaptersController.php:109
+msgid "The chapter has been deleted."
+msgstr ""
+
+#: Controller/ChaptersController.php:111
+msgid "The chapter could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ExpectedAnswersController.php:57;82
+msgid "The expected answer has been saved."
+msgstr ""
+
+#: Controller/ExpectedAnswersController.php:61;86
+msgid "The expected answer could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ExpectedAnswersController.php:104
+msgid "The expected answer has been deleted."
+msgstr ""
+
+#: Controller/ExpectedAnswersController.php:106
+msgid "The expected answer could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/GroupsController.php:60;89
+msgid "The group has been saved."
+msgstr ""
+
+#: Controller/GroupsController.php:64;93
+msgid "The group could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GroupsController.php:113
+msgid "The group has been deleted."
+msgstr ""
+
+#: Controller/GroupsController.php:115
+msgid "The group could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/InstallersController.php:45
+msgid "The database schema is now create."
+msgstr ""
+
+#: Controller/InstallersController.php:47
+msgid "The database is now populated."
+msgstr ""
+
+#: Controller/InstallersController.php:49
+msgid "The database couldn’t be populated."
+msgstr ""
+
+#: Controller/InstallersController.php:53
+msgid "The database schema can’t be created."
+msgstr ""
+
+#: Controller/InstallersController.php:71
+#: Controller/UsersController.php:56;85;240;272;304
+msgid "The user has been saved."
+msgstr ""
+
+#: Controller/InstallersController.php:76
+#: Controller/UsersController.php:60;89;244;276;308
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/InstallersController.php:97
+msgid "The Link could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/InstallersController.php:110
+msgid "The install is now finish."
+msgstr ""
+
+#: Controller/LinksController.php:58;85;145
+msgid "The link has been saved."
+msgstr ""
+
+#: Controller/LinksController.php:62;89;148
+msgid "The link could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/LinksController.php:109
+msgid "The link has been deleted."
+msgstr ""
+
+#: Controller/LinksController.php:111
+msgid "The link could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MultipleChoiceQuestionsController.php:57;85
+msgid "The multiple choice question has been saved."
+msgstr ""
+
+#: Controller/MultipleChoiceQuestionsController.php:61;89
+msgid "The multiple choice question could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MultipleChoiceQuestionsController.php:110
+msgid "The multiple choice question has been deleted."
+msgstr ""
+
+#: Controller/MultipleChoiceQuestionsController.php:112
+msgid "The multiple choice question could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/OpenedQuestionsController.php:60;87
+msgid "The opened question has been saved."
+msgstr ""
+
+#: Controller/OpenedQuestionsController.php:64;91
+msgid "The opened question could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/OpenedQuestionsController.php:111
+msgid "The opened question has been deleted."
+msgstr ""
+
+#: Controller/OpenedQuestionsController.php:113
+msgid "The opened question could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PathsController.php:58;90;185
+msgid "The path has been saved."
+msgstr ""
+
+#: Controller/PathsController.php:62;95;189
+msgid "The path could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PathsController.php:146
+msgid "The path has been deleted."
+msgstr ""
+
+#: Controller/PathsController.php:148
+msgid "The path could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/QuestionsController.php:57;85
+msgid "The question has been saved."
+msgstr ""
+
+#: Controller/QuestionsController.php:61;89
+msgid "The question could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/QuestionsController.php:110
+msgid "The question has been deleted."
+msgstr ""
+
+#: Controller/QuestionsController.php:112
+msgid "The question could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/StepsController.php:62;92;203
+msgid "The step has been saved."
+msgstr ""
+
+#: Controller/StepsController.php:66;96;176;197;206;245
+msgid "The step could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/StepsController.php:119
+msgid "The step has been deleted."
+msgstr ""
+
+#: Controller/StepsController.php:121
+msgid "The step could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/TopicsController.php:59;96;196
+msgid "The topic has been saved."
+msgstr ""
+
+#: Controller/TopicsController.php:62;101;200
+msgid "The topic could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TopicsController.php:128
+msgid "The topic has been deleted."
+msgstr ""
+
+#: Controller/TopicsController.php:130
+msgid "The topic could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/TriesController.php:60;90
+msgid "The try has been saved."
+msgstr ""
+
+#: Controller/TriesController.php:64;94
+msgid "The try could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TriesController.php:117
+msgid "The try has been deleted."
+msgstr ""
+
+#: Controller/TriesController.php:119
+msgid "The try could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:111
+msgid "The user has been deleted."
+msgstr ""
+
+#: Controller/UsersController.php:113
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:184
+msgid "Your profile has been saved."
+msgstr ""
+
+#: Controller/UsersController.php:188
+msgid "Your profile could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:210
+msgid "Invalid username or password, try again"
+msgstr ""
+
+#: Template/Answers/add.ctp:8
+#: Template/Answers/edit.ctp:8
+#: Template/Answers/index.ctp:9;27
+#: Template/Answers/view.ctp:9;54;83
+#: Template/Appreciations/add.ctp:8
+#: Template/Appreciations/edit.ctp:8
+#: Template/Appreciations/index.ctp:9;24
+#: Template/Appreciations/view.ctp:9;50
+#: Template/Chapters/add.ctp:8
+#: Template/Chapters/edit.ctp:8
+#: Template/Chapters/index.ctp:9;26
+#: Template/Chapters/index_topics.ctp:9;26
+#: Template/Chapters/view.ctp:10
+#: Template/Element/menu.ctp:3
+#: Template/ExpectedAnswers/add.ctp:8
+#: Template/ExpectedAnswers/edit.ctp:8
+#: Template/ExpectedAnswers/index.ctp:9;23
+#: Template/ExpectedAnswers/view.ctp:9;49
+#: Template/Groups/index.ctp:9;25
+#: Template/Groups/index_admin.ctp:19
+#: Template/Groups/index_classes.ctp:15
+#: Template/Groups/index_students.ctp:18
+#: Template/Groups/index_teachers.ctp:19
+#: Template/Groups/view.ctp:9;46;77
+#: Template/Links/add.ctp:8
+#: Template/Links/edit.ctp:8
+#: Template/Links/index.ctp:9;27
+#: Template/Links/index_links.ctp:19
+#: Template/Links/view.ctp:9;55;88
+#: Template/MultipleChoiceQuestions/add.ctp:8
+#: Template/MultipleChoiceQuestions/edit.ctp:8
+#: Template/MultipleChoiceQuestions/index.ctp:9;28
+#: Template/MultipleChoiceQuestions/view.ctp:9;52;82;111
+#: Template/OpenedQuestions/add.ctp:8
+#: Template/OpenedQuestions/edit.ctp:8
+#: Template/OpenedQuestions/index.ctp:9;26
+#: Template/OpenedQuestions/view.ctp:9;59
+#: Template/Paths/add.ctp:8
+#: Template/Paths/index.ctp:9;30
+#: Template/Paths/view.ctp:9;59;88;115;146
+#: Template/Questions/add.ctp:8
+#: Template/Questions/edit.ctp:8
+#: Template/Questions/index.ctp:9;27
+#: Template/Questions/view.ctp:9;56;84;111
+#: Template/Steps/add.ctp:8
+#: Template/Steps/edit.ctp:8
+#: Template/Steps/index.ctp:9;32
+#: Template/Steps/view.ctp:9;62;90;119
+#: Template/Topics/add.ctp:8
+#: Template/Topics/index.ctp:9;26
+#: Template/Topics/view_users.ctp:9
+#: Template/Tries/add.ctp:8
+#: Template/Tries/edit.ctp:8
+#: Template/Tries/index.ctp:9;32
+#: Template/Tries/view.ctp:9;56;84;112;141
+#: Template/Users/add.ctp:8
+#: Template/Users/change_password.ctp:8
+#: Template/Users/edit.ctp:8
+#: Template/Users/index.ctp:9;34
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Element/form.ctp:30
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:43;69
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:64;160
+msgid "Actions"
+msgstr ""
+
+#: Template/Answers/add.ctp:9
+#: Template/Answers/edit.ctp:15
+#: Template/Answers/view.ctp:12
+#: Template/Questions/add.ctp:10
+#: Template/Questions/edit.ctp:16
+#: Template/Questions/index.ctp:11
+#: Template/Questions/view.ctp:14
+msgid "List Answers"
+msgstr ""
+
+#: Template/Answers/add.ctp:10
+#: Template/Answers/edit.ctp:16
+#: Template/Answers/index.ctp:11
+#: Template/Answers/view.ctp:14
+#: Template/MultipleChoiceQuestions/add.ctp:10
+#: Template/MultipleChoiceQuestions/edit.ctp:16
+#: Template/MultipleChoiceQuestions/index.ctp:11
+#: Template/MultipleChoiceQuestions/view.ctp:14
+#: Template/Questions/add.ctp:9
+#: Template/Questions/edit.ctp:15
+#: Template/Questions/view.ctp:12
+#: Template/Tries/add.ctp:16
+#: Template/Tries/edit.ctp:22
+#: Template/Tries/index.ctp:17
+#: Template/Tries/view.ctp:20
+msgid "List Questions"
+msgstr ""
+
+#: Template/Answers/add.ctp:11
+#: Template/Answers/edit.ctp:17
+#: Template/Answers/index.ctp:12
+#: Template/Answers/view.ctp:15
+#: Template/MultipleChoiceQuestions/add.ctp:11
+#: Template/MultipleChoiceQuestions/edit.ctp:17
+#: Template/MultipleChoiceQuestions/index.ctp:12
+#: Template/MultipleChoiceQuestions/view.ctp:15
+#: Template/Questions/index.ctp:10
+#: Template/Questions/view.ctp:13
+#: Template/Tries/add.ctp:17
+#: Template/Tries/edit.ctp:23
+#: Template/Tries/index.ctp:18
+#: Template/Tries/view.ctp:21
+msgid "New Question"
+msgstr ""
+
+#: Template/Answers/add.ctp:12
+#: Template/Answers/edit.ctp:18
+#: Template/Answers/index.ctp:13
+#: Template/Answers/view.ctp:16
+msgid "List Questions Tries"
+msgstr ""
+
+#: Template/Answers/add.ctp:13
+#: Template/Answers/edit.ctp:19
+#: Template/Answers/index.ctp:14
+#: Template/Answers/view.ctp:17
+msgid "New Questions Try"
+msgstr ""
+
+#: Template/Answers/add.ctp:19
+msgid "Add Answer"
+msgstr ""
+
+#: Template/Answers/add.ctp:27
+#: Template/Answers/edit.ctp:33
+#: Template/Appreciations/add.ctp:23
+#: Template/Appreciations/edit.ctp:29
+#: Template/Chapters/add.ctp:26
+#: Template/Chapters/addfrom.ctp:15
+#: Template/Chapters/edit.ctp:32
+#: Template/ExpectedAnswers/add.ctp:22
+#: Template/ExpectedAnswers/edit.ctp:28
+#: Template/Groups/add.ctp:21
+#: Template/Groups/edit.ctp:17
+#: Template/Installers/step_four.ctp:45
+#: Template/Installers/step_three.ctp:49
+#: Template/Links/add.ctp:27
+#: Template/Links/add_links.ctp:15
+#: Template/Links/edit.ctp:33
+#: Template/MultipleChoiceQuestions/add.ctp:29
+#: Template/MultipleChoiceQuestions/edit.ctp:35
+#: Template/OpenedQuestions/add.ctp:27
+#: Template/OpenedQuestions/edit.ctp:33
+#: Template/Paths/add.ctp:32
+#: Template/Paths/addfrom.ctp:19
+#: Template/Paths/edit.ctp:19
+#: Template/Questions/add.ctp:30
+#: Template/Questions/edit.ctp:36
+#: Template/Steps/add.ctp:33
+#: Template/Steps/add_from.ctp:21
+#: Template/Steps/edit.ctp:39
+#: Template/Topics/add.ctp:26
+#: Template/Topics/add_topic.ctp:17
+#: Template/Topics/edit.ctp:17
+#: Template/Tries/add.ctp:34
+#: Template/Tries/edit.ctp:40
+#: Template/Users/add.ctp:37
+#: Template/Users/add_admin.ctp:20
+#: Template/Users/add_student.ctp:20
+#: Template/Users/add_teacher.ctp:20
+#: Template/Users/change_password.ctp:34
+#: Template/Users/edit.ctp:43
+#: Template/Users/edit_profile.ctp:20
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Element/form.ctp:102
+msgid "Submit"
+msgstr ""
+
+#: Template/Answers/edit.ctp:10
+#: Template/Answers/index.ctp:41
+#: Template/Answers/view.ctp:66;95
+#: Template/Appreciations/edit.ctp:10
+#: Template/Appreciations/index.ctp:37
+#: Template/Appreciations/view.ctp:64
+#: Template/Chapters/edit.ctp:10
+#: Template/Chapters/index.ctp:39
+#: Template/Chapters/index_topics.ctp:39
+#: Template/ExpectedAnswers/edit.ctp:10
+#: Template/ExpectedAnswers/index.ctp:35
+#: Template/ExpectedAnswers/view.ctp:62
+#: Template/Groups/index.ctp:37
+#: Template/Groups/index_admin.ctp:30
+#: Template/Groups/index_classes.ctp:24
+#: Template/Groups/index_students.ctp:28
+#: Template/Groups/index_teachers.ctp:29
+#: Template/Groups/view.ctp:58;91
+#: Template/Links/edit.ctp:10
+#: Template/Links/index.ctp:41
+#: Template/Links/index_links.ctp:30
+#: Template/Links/view.ctp:68;103
+#: Template/MultipleChoiceQuestions/edit.ctp:10
+#: Template/MultipleChoiceQuestions/index.ctp:41
+#: Template/MultipleChoiceQuestions/view.ctp:64;95;122
+#: Template/OpenedQuestions/edit.ctp:10
+#: Template/OpenedQuestions/index.ctp:39
+#: Template/OpenedQuestions/view.ctp:72
+#: Template/Paths/index.ctp:43
+#: Template/Paths/view.ctp:72;99;126;161
+#: Template/Questions/edit.ctp:10
+#: Template/Questions/index.ctp:39
+#: Template/Questions/view.ctp:68;95;122
+#: Template/Steps/edit.ctp:10
+#: Template/Steps/index.ctp:47
+#: Template/Steps/view.ctp:74;101;132
+#: Template/Topics/index.ctp:39
+#: Template/Tries/edit.ctp:10
+#: Template/Tries/index.ctp:45
+#: Template/Tries/view.ctp:68;95;124;153
+#: Template/Users/change_password.ctp:10
+#: Template/Users/edit.ctp:10
+#: Template/Users/index.ctp:51
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Element/form.ctp:33
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:106
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:171
+msgid "Delete"
+msgstr ""
+
+#: Template/Answers/edit.ctp:12
+#: Template/Answers/index.ctp:41
+#: Template/Answers/view.ctp:11;66;95
+#: Template/Appreciations/edit.ctp:12
+#: Template/Appreciations/index.ctp:37
+#: Template/Appreciations/view.ctp:11;64
+#: Template/Chapters/edit.ctp:12
+#: Template/Chapters/index.ctp:39
+#: Template/Chapters/index_topics.ctp:39
+#: Template/ExpectedAnswers/edit.ctp:12
+#: Template/ExpectedAnswers/index.ctp:35
+#: Template/ExpectedAnswers/view.ctp:11;62
+#: Template/Groups/index.ctp:37
+#: Template/Groups/index_classes.ctp:24
+#: Template/Groups/view.ctp:11;58;91
+#: Template/Links/edit.ctp:12
+#: Template/Links/index.ctp:41
+#: Template/Links/index_links.ctp:30
+#: Template/Links/view.ctp:11;68;103
+#: Template/MultipleChoiceQuestions/edit.ctp:12
+#: Template/MultipleChoiceQuestions/index.ctp:41
+#: Template/MultipleChoiceQuestions/view.ctp:11;64;95;122
+#: Template/OpenedQuestions/edit.ctp:12
+#: Template/OpenedQuestions/index.ctp:39
+#: Template/OpenedQuestions/view.ctp:11;72
+#: Template/Paths/index.ctp:43
+#: Template/Paths/view.ctp:11;72;99;126;161
+#: Template/Questions/edit.ctp:12
+#: Template/Questions/index.ctp:39
+#: Template/Questions/view.ctp:11;68;95;122
+#: Template/Steps/edit.ctp:12
+#: Template/Steps/index.ctp:47
+#: Template/Steps/view.ctp:11;74;101;132
+#: Template/Topics/index.ctp:39
+#: Template/Tries/edit.ctp:12
+#: Template/Tries/index.ctp:45
+#: Template/Tries/view.ctp:11;68;95;124;153
+#: Template/Users/change_password.ctp:12
+#: Template/Users/edit.ctp:12
+#: Template/Users/index.ctp:51
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Element/form.ctp:35
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:106
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:66;171
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Answers/edit.ctp:25
+#: Template/Answers/view.ctp:10
+msgid "Edit Answer"
+msgstr ""
+
+#: Template/Answers/index.ctp:10
+#: Template/Answers/view.ctp:13
+#: Template/Questions/add.ctp:11
+#: Template/Questions/edit.ctp:17
+#: Template/Questions/index.ctp:12
+#: Template/Questions/view.ctp:15
+msgid "New Answer"
+msgstr ""
+
+#: Template/Answers/index.ctp:18
+msgid "Answers"
+msgstr ""
+
+#: Template/Answers/index.ctp:39
+#: Template/Answers/view.ctp:64;93
+#: Template/Appreciations/index.ctp:35
+#: Template/Appreciations/view.ctp:62
+#: Template/Chapters/index.ctp:37
+#: Template/Chapters/index_topics.ctp:37
+#: Template/ExpectedAnswers/index.ctp:33
+#: Template/ExpectedAnswers/view.ctp:60
+#: Template/Groups/index.ctp:35
+#: Template/Groups/view.ctp:56;89
+#: Template/Links/index.ctp:39
+#: Template/Links/view.ctp:66;101
+#: Template/MultipleChoiceQuestions/index.ctp:39
+#: Template/MultipleChoiceQuestions/view.ctp:62;93;120
+#: Template/OpenedQuestions/index.ctp:37
+#: Template/OpenedQuestions/view.ctp:70
+#: Template/Paths/index.ctp:41
+#: Template/Paths/view.ctp:70;97;124;159
+#: Template/Questions/index.ctp:37
+#: Template/Questions/view.ctp:66;93;120
+#: Template/Steps/index.ctp:45
+#: Template/Steps/view.ctp:72;99;130
+#: Template/Topics/index.ctp:37
+#: Template/Tries/index.ctp:43
+#: Template/Tries/view.ctp:66;93;122;151
+#: Template/Users/index.ctp:49
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:104
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:169
+msgid "View"
+msgstr ""
+
+#: Template/Answers/index.ctp:40
+#: Template/Answers/view.ctp:65;94
+#: Template/Appreciations/index.ctp:36
+#: Template/Appreciations/view.ctp:63
+#: Template/Chapters/index.ctp:38
+#: Template/Chapters/index_topics.ctp:38
+#: Template/ExpectedAnswers/index.ctp:34
+#: Template/ExpectedAnswers/view.ctp:61
+#: Template/Groups/index.ctp:36
+#: Template/Groups/view.ctp:57;90
+#: Template/Links/index.ctp:40
+#: Template/Links/view.ctp:67;102
+#: Template/MultipleChoiceQuestions/index.ctp:40
+#: Template/MultipleChoiceQuestions/view.ctp:63;94;121
+#: Template/OpenedQuestions/index.ctp:38
+#: Template/OpenedQuestions/view.ctp:71
+#: Template/Paths/index.ctp:42
+#: Template/Paths/view.ctp:71;98;125;160
+#: Template/Questions/index.ctp:38
+#: Template/Questions/view.ctp:67;94;121
+#: Template/Steps/index.ctp:46
+#: Template/Steps/view.ctp:73;100;131
+#: Template/Topics/index.ctp:38
+#: Template/Tries/index.ctp:44
+#: Template/Tries/view.ctp:67;94;123;152
+#: Template/Users/index.ctp:50
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:105
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:170
+msgid "Edit"
+msgstr ""
+
+#: Template/Answers/index.ctp:49
+#: Template/Appreciations/index.ctp:45
+#: Template/Chapters/index.ctp:47
+#: Template/Chapters/index_topics.ctp:47
+#: Template/ExpectedAnswers/index.ctp:43
+#: Template/Groups/index.ctp:45
+#: Template/Groups/index_classes.ctp:32
+#: Template/Links/index.ctp:49
+#: Template/Links/index_links.ctp:38
+#: Template/MultipleChoiceQuestions/index.ctp:49
+#: Template/OpenedQuestions/index.ctp:47
+#: Template/Paths/index.ctp:51
+#: Template/Questions/index.ctp:47
+#: Template/Steps/index.ctp:55
+#: Template/Topics/index.ctp:47
+#: Template/Topics/index_students.ctp:27
+#: Template/Topics/index_teachers.ctp:31
+#: Template/Tries/index.ctp:53
+#: Template/Users/index.ctp:59
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:114
+msgid "first"
+msgstr ""
+
+#: Template/Answers/index.ctp:50
+#: Template/Appreciations/index.ctp:46
+#: Template/Chapters/index.ctp:48
+#: Template/Chapters/index_topics.ctp:48
+#: Template/ExpectedAnswers/index.ctp:44
+#: Template/Groups/index.ctp:46
+#: Template/Groups/index_classes.ctp:33
+#: Template/Links/index.ctp:50
+#: Template/Links/index_links.ctp:39
+#: Template/MultipleChoiceQuestions/index.ctp:50
+#: Template/OpenedQuestions/index.ctp:48
+#: Template/Paths/index.ctp:52
+#: Template/Questions/index.ctp:48
+#: Template/Steps/index.ctp:56
+#: Template/Topics/index.ctp:48
+#: Template/Topics/index_students.ctp:28
+#: Template/Topics/index_teachers.ctp:32
+#: Template/Tries/index.ctp:54
+#: Template/Users/index.ctp:60
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:115
+msgid "previous"
+msgstr ""
+
+#: Template/Answers/index.ctp:52
+#: Template/Appreciations/index.ctp:48
+#: Template/Chapters/index.ctp:50
+#: Template/Chapters/index_topics.ctp:50
+#: Template/ExpectedAnswers/index.ctp:46
+#: Template/Groups/index.ctp:48
+#: Template/Groups/index_classes.ctp:35
+#: Template/Links/index.ctp:52
+#: Template/Links/index_links.ctp:41
+#: Template/MultipleChoiceQuestions/index.ctp:52
+#: Template/OpenedQuestions/index.ctp:50
+#: Template/Paths/index.ctp:54
+#: Template/Questions/index.ctp:50
+#: Template/Steps/index.ctp:58
+#: Template/Topics/index.ctp:50
+#: Template/Topics/index_students.ctp:30
+#: Template/Topics/index_teachers.ctp:34
+#: Template/Tries/index.ctp:56
+#: Template/Users/index.ctp:62
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:117
+msgid "next"
+msgstr ""
+
+#: Template/Answers/index.ctp:53
+#: Template/Appreciations/index.ctp:49
+#: Template/Chapters/index.ctp:51
+#: Template/Chapters/index_topics.ctp:51
+#: Template/ExpectedAnswers/index.ctp:47
+#: Template/Groups/index.ctp:49
+#: Template/Groups/index_classes.ctp:36
+#: Template/Links/index.ctp:53
+#: Template/Links/index_links.ctp:42
+#: Template/MultipleChoiceQuestions/index.ctp:53
+#: Template/OpenedQuestions/index.ctp:51
+#: Template/Paths/index.ctp:55
+#: Template/Questions/index.ctp:51
+#: Template/Steps/index.ctp:59
+#: Template/Topics/index.ctp:51
+#: Template/Topics/index_students.ctp:31
+#: Template/Topics/index_teachers.ctp:35
+#: Template/Tries/index.ctp:57
+#: Template/Users/index.ctp:63
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:118
+msgid "last"
+msgstr ""
+
+#: Template/Answers/index.ctp:55
+#: Template/Appreciations/index.ctp:51
+#: Template/Chapters/index.ctp:53
+#: Template/Chapters/index_topics.ctp:53
+#: Template/ExpectedAnswers/index.ctp:49
+#: Template/Groups/index.ctp:51
+#: Template/Groups/index_classes.ctp:38
+#: Template/Links/index.ctp:55
+#: Template/Links/index_links.ctp:44
+#: Template/MultipleChoiceQuestions/index.ctp:55
+#: Template/OpenedQuestions/index.ctp:53
+#: Template/Paths/index.ctp:57
+#: Template/Questions/index.ctp:53
+#: Template/Steps/index.ctp:61
+#: Template/Topics/index.ctp:53
+#: Template/Topics/index_students.ctp:33
+#: Template/Topics/index_teachers.ctp:37
+#: Template/Tries/index.ctp:59
+#: Template/Users/index.ctp:65
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:120
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr ""
+
+#: Template/Answers/view.ctp:11
+msgid "Delete Answer"
+msgstr ""
+
+#: Template/Answers/view.ctp:24;49
+#: Template/Appreciations/view.ctp:22;43
+#: Template/ExpectedAnswers/view.ctp:22;43
+#: Template/Groups/view.ctp:24;41;70
+#: Template/Links/view.ctp:24;49;80
+#: Template/MultipleChoiceQuestions/view.ctp:26;47;76;107
+#: Template/OpenedQuestions/view.ctp:24;53
+#: Template/Paths/view.ctp:28;53;84;111;138
+#: Template/Questions/view.ctp:26;51;80;107
+#: Template/Steps/view.ctp:28;57;86;113
+#: Template/Tries/view.ctp:30;80;107;136
+msgid "Id"
+msgstr ""
+
+#: Template/Answers/view.ctp:28;50
+#: Template/Appreciations/view.ctp:26;48
+#: Template/Chapters/view_users.ctp:15
+#: Template/ExpectedAnswers/view.ctp:35;44
+#: Template/Groups/index_admin.ctp:15
+#: Template/Groups/index_students.ctp:14
+#: Template/Groups/index_teachers.ctp:15
+#: Template/Groups/view.ctp:28;42;71
+#: Template/Groups/view_classes.ctp:16
+#: Template/Links/view.ctp:28
+#: Template/MultipleChoiceQuestions/view.ctp:30;48
+#: Template/OpenedQuestions/view.ctp:41
+#: Template/Paths/view.ctp:32;85
+#: Template/Questions/view.ctp:39;52;108
+#: Template/Steps/view.ctp:58;87;114
+#: Template/Topics/view.ctp:16;33;55
+#: Template/Topics/view_users.ctp:18;35
+#: Template/Tries/view.ctp:81;108;137
+#: Template/Users/view_profile.ctp:48
+msgid "Name"
+msgstr ""
+
+#: Template/Answers/view.ctp:32
+#: Template/Questions/view.ctp:53
+msgid "Is Right"
+msgstr ""
+
+#: Template/Answers/view.ctp:36;52;81
+#: Template/Appreciations/view.ctp:30;44
+#: Template/Chapters/view_users.ctp:19
+#: Template/ExpectedAnswers/view.ctp:26;46
+#: Template/Groups/index_admin.ctp:17
+#: Template/Groups/index_students.ctp:16
+#: Template/Groups/index_teachers.ctp:17
+#: Template/Groups/view.ctp:43
+#: Template/Links/view.ctp:36;52
+#: Template/MultipleChoiceQuestions/view.ctp:34;50;80;108
+#: Template/OpenedQuestions/view.ctp:32;57
+#: Template/Paths/view.ctp:36;56;86;112
+#: Template/Questions/view.ctp:30;54;81;109
+#: Template/Steps/view.ctp:40;60;88;116
+#: Template/Topics/view.ctp:20;34
+#: Template/Topics/view_users.ctp:22;36
+#: Template/Tries/view.ctp:38;54;82;110;139
+msgid "Created"
+msgstr ""
+
+#: Template/Answers/view.ctp:40;53;82
+#: Template/Appreciations/view.ctp:34;45
+#: Template/Chapters/view_users.ctp:23
+#: Template/ExpectedAnswers/view.ctp:30;47
+#: Template/Groups/index_admin.ctp:18
+#: Template/Groups/index_students.ctp:17
+#: Template/Groups/index_teachers.ctp:18
+#: Template/Groups/view.ctp:44
+#: Template/Links/view.ctp:40;53
+#: Template/MultipleChoiceQuestions/view.ctp:38;51;81;109
+#: Template/OpenedQuestions/view.ctp:36;58
+#: Template/Paths/view.ctp:40;57;87;113
+#: Template/Questions/view.ctp:34;55;82;110
+#: Template/Steps/view.ctp:44;61;89;117
+#: Template/Topics/view.ctp:24
+#: Template/Topics/view_users.ctp:26
+#: Template/Tries/view.ctp:42;55;83;111;140
+msgid "Updated"
+msgstr ""
+
+#: Template/Answers/view.ctp:45
+#: Template/MultipleChoiceQuestions/view.ctp:43
+#: Template/Tries/view.ctp:103
+msgid "Related Questions"
+msgstr ""
+
+#: Template/Answers/view.ctp:51
+#: Template/MultipleChoiceQuestions/view.ctp:49
+#: Template/Questions/view.ctp:43
+#: Template/Tries/view.ctp:109
+msgid "Note"
+msgstr ""
+
+#: Template/Answers/view.ctp:74
+msgid "Related Questions Tries"
+msgstr ""
+
+#: Template/Answers/view.ctp:78
+msgid "Try Id"
+msgstr ""
+
+#: Template/Answers/view.ctp:79
+#: Template/Tries/view.ctp:52
+msgid "Question Id"
+msgstr ""
+
+#: Template/Answers/view.ctp:80
+msgid "Done"
+msgstr ""
+
+#: Template/Appreciations/add.ctp:9
+#: Template/Appreciations/edit.ctp:15
+#: Template/Appreciations/view.ctp:12
+msgid "List Appreciations"
+msgstr ""
+
+#: Template/Appreciations/add.ctp:10
+#: Template/Appreciations/edit.ctp:16
+#: Template/Appreciations/index.ctp:11
+#: Template/Appreciations/view.ctp:14
+msgid "List Opened Answers"
+msgstr ""
+
+#: Template/Appreciations/add.ctp:11
+#: Template/Appreciations/edit.ctp:17
+#: Template/Appreciations/index.ctp:12
+#: Template/Appreciations/view.ctp:15
+msgid "New Opened Answer"
+msgstr ""
+
+#: Template/Appreciations/add.ctp:17
+msgid "Add Appreciation"
+msgstr ""
+
+#: Template/Appreciations/edit.ctp:23
+#: Template/Appreciations/view.ctp:10
+msgid "Edit Appreciation"
+msgstr ""
+
+#: Template/Appreciations/index.ctp:10
+#: Template/Appreciations/view.ctp:13
+msgid "New Appreciation"
+msgstr ""
+
+#: Template/Appreciations/index.ctp:16
+msgid "Appreciations"
+msgstr ""
+
+#: Template/Appreciations/view.ctp:11
+msgid "Delete Appreciation"
+msgstr ""
+
+#: Template/Appreciations/view.ctp:39
+msgid "Related Opened Answers"
+msgstr ""
+
+#: Template/Appreciations/view.ctp:46
+msgid "Triesid"
+msgstr ""
+
+#: Template/Appreciations/view.ctp:47
+msgid "Opened Questionsid"
+msgstr ""
+
+#: Template/Appreciations/view.ctp:49
+msgid "Corrected"
+msgstr ""
+
+#: Template/Chapters/add.ctp:9
+#: Template/Chapters/edit.ctp:15
+#: Template/Paths/add.ctp:12
+#: Template/Paths/index.ctp:13
+#: Template/Paths/view.ctp:16
+#: Template/Topics/add.ctp:12
+#: Template/Topics/index.ctp:13
+msgid "List Chapters"
+msgstr ""
+
+#: Template/Chapters/add.ctp:10
+#: Template/Chapters/edit.ctp:16
+#: Template/Chapters/index.ctp:11
+#: Template/Chapters/index_topics.ctp:11
+#: Template/Paths/add.ctp:9
+#: Template/Paths/view.ctp:12
+#: Template/Steps/add.ctp:10
+#: Template/Steps/edit.ctp:16
+#: Template/Steps/index.ctp:11
+#: Template/Steps/view.ctp:14
+#: Template/Tries/add.ctp:18
+#: Template/Tries/edit.ctp:24
+#: Template/Tries/index.ctp:19
+#: Template/Tries/view.ctp:22
+#: Template/Users/add.ctp:14
+#: Template/Users/change_password.ctp:20
+#: Template/Users/edit.ctp:20
+#: Template/Users/index.ctp:15
+msgid "List Paths"
+msgstr ""
+
+#: Template/Chapters/add.ctp:11
+#: Template/Chapters/edit.ctp:17
+#: Template/Chapters/index.ctp:12
+#: Template/Chapters/index_topics.ctp:12
+#: Template/Paths/index.ctp:10
+#: Template/Paths/view.ctp:13
+#: Template/Steps/add.ctp:11
+#: Template/Steps/edit.ctp:17
+#: Template/Steps/index.ctp:12
+#: Template/Steps/view.ctp:15
+#: Template/Tries/add.ctp:19
+#: Template/Tries/edit.ctp:25
+#: Template/Tries/index.ctp:20
+#: Template/Tries/view.ctp:23
+#: Template/Users/add.ctp:15
+#: Template/Users/change_password.ctp:21
+#: Template/Users/edit.ctp:21
+#: Template/Users/index.ctp:16
+msgid "New Path"
+msgstr ""
+
+#: Template/Chapters/add.ctp:12
+#: Template/Chapters/edit.ctp:18
+#: Template/Chapters/index.ctp:13
+#: Template/Chapters/index_topics.ctp:13
+#: Template/Groups/index.ctp:11
+#: Template/Groups/view.ctp:14
+#: Template/Topics/add.ctp:9
+#: Template/Users/add.ctp:16
+#: Template/Users/edit.ctp:22
+#: Template/Users/index.ctp:17
+msgid "List Topics"
+msgstr ""
+
+#: Template/Chapters/add.ctp:13
+#: Template/Chapters/edit.ctp:19
+#: Template/Chapters/index.ctp:14
+#: Template/Chapters/index_topics.ctp:14
+#: Template/Groups/index.ctp:12
+#: Template/Groups/view.ctp:15
+#: Template/Topics/index.ctp:10
+#: Template/Users/add.ctp:17
+#: Template/Users/edit.ctp:23
+#: Template/Users/index.ctp:18
+msgid "New Topic"
+msgstr ""
+
+#: Template/Chapters/add.ctp:19
+#: Template/Chapters/addfrom.ctp:10
+msgid "Add Chapter"
+msgstr ""
+
+#: Template/Chapters/edit.ctp:25
+msgid "Edit Chapter"
+msgstr ""
+
+#: Template/Chapters/index.ctp:10
+#: Template/Chapters/index_topics.ctp:10
+#: Template/Paths/add.ctp:13
+#: Template/Paths/index.ctp:14
+#: Template/Paths/view.ctp:17
+#: Template/Topics/add.ctp:13
+#: Template/Topics/index.ctp:14
+msgid "New Chapter"
+msgstr ""
+
+#: Template/Chapters/index.ctp:18
+#: Template/Chapters/index_topics.ctp:18
+msgid "Chapters"
+msgstr ""
+
+#: Template/Chapters/view.ctp:11
+#: Template/Topics/view_users.ctp:10
+msgid "My Profile"
+msgstr ""
+
+#: Template/Chapters/view.ctp:12
+#: Template/Element/menu_students.ctp:1
+#: Template/Topics/view_users.ctp:11
+msgid "My Topics"
+msgstr ""
+
+#: Template/Chapters/view.ctp:17
+#: Template/Chapters/view_users.ctp:30
+msgid "Add a path"
+msgstr ""
+
+#: Template/Chapters/view.ctp:23
+#: Template/Chapters/view_users.ctp:28
+#: Template/Tries/view.ctp:132
+msgid "Related Paths"
+msgstr ""
+
+#: Template/Chapters/view.ctp:45
+#: Template/Chapters/view_users.ctp:50
+#: Template/Steps/add.ctp:23
+#: Template/Steps/add_from.ctp:11
+msgid "Add Step"
+msgstr ""
+
+#: Template/Chapters/view_users.ctp:43
+#: Template/Paths/edit.ctp:10
+#: Template/Paths/view.ctp:10
+msgid "Edit Path"
+msgstr ""
+
+#: Template/Element/menu_admin.ctp:1
+msgid "Administrators list"
+msgstr ""
+
+#: Template/Element/menu_admin.ctp:2
+msgid "Teachers list"
+msgstr ""
+
+#: Template/Element/menu_admin.ctp:3
+msgid "Students list"
+msgstr ""
+
+#: Template/Element/menu_common.ctp:3
+msgid "Logout"
+msgstr ""
+
+#: Template/Element/menu_teachers.ctp:2
+msgid "Courses wiki"
+msgstr ""
+
+#: Template/Element/menu_teachers.ctp:5
+msgid "Classes  list"
+msgstr ""
+
+#: Template/Element/menu_teachers.ctp:6
+msgid "Topics list"
+msgstr ""
+
+#: Template/Element/menu_teachers.ctp:7
+msgid "Courses link list"
+msgstr ""
+
+#: Template/ExpectedAnswers/add.ctp:9
+#: Template/ExpectedAnswers/edit.ctp:15
+#: Template/ExpectedAnswers/view.ctp:12
+#: Template/OpenedQuestions/add.ctp:10
+#: Template/OpenedQuestions/edit.ctp:16
+#: Template/OpenedQuestions/index.ctp:11
+#: Template/OpenedQuestions/view.ctp:14
+msgid "List Expected Answers"
+msgstr ""
+
+#: Template/ExpectedAnswers/add.ctp:10
+#: Template/ExpectedAnswers/edit.ctp:16
+#: Template/ExpectedAnswers/index.ctp:11
+#: Template/ExpectedAnswers/view.ctp:14
+#: Template/OpenedQuestions/add.ctp:9
+#: Template/OpenedQuestions/edit.ctp:15
+#: Template/OpenedQuestions/view.ctp:12
+#: Template/Steps/add.ctp:16
+#: Template/Steps/edit.ctp:22
+#: Template/Steps/index.ctp:17
+#: Template/Steps/view.ctp:20
+msgid "List Opened Questions"
+msgstr ""
+
+#: Template/ExpectedAnswers/add.ctp:11
+#: Template/ExpectedAnswers/edit.ctp:17
+#: Template/ExpectedAnswers/index.ctp:12
+#: Template/ExpectedAnswers/view.ctp:15
+#: Template/OpenedQuestions/index.ctp:10
+#: Template/OpenedQuestions/view.ctp:13
+#: Template/Steps/add.ctp:17
+#: Template/Steps/edit.ctp:23
+#: Template/Steps/index.ctp:18
+#: Template/Steps/view.ctp:21
+msgid "New Opened Question"
+msgstr ""
+
+#: Template/ExpectedAnswers/add.ctp:17
+msgid "Add Expected Answer"
+msgstr ""
+
+#: Template/ExpectedAnswers/edit.ctp:23
+#: Template/ExpectedAnswers/view.ctp:10
+msgid "Edit Expected Answer"
+msgstr ""
+
+#: Template/ExpectedAnswers/index.ctp:10
+#: Template/ExpectedAnswers/view.ctp:13
+#: Template/OpenedQuestions/add.ctp:11
+#: Template/OpenedQuestions/edit.ctp:17
+#: Template/OpenedQuestions/index.ctp:12
+#: Template/OpenedQuestions/view.ctp:15
+msgid "New Expected Answer"
+msgstr ""
+
+#: Template/ExpectedAnswers/index.ctp:16
+msgid "Expected Answers"
+msgstr ""
+
+#: Template/ExpectedAnswers/view.ctp:11
+msgid "Delete Expected Answer"
+msgstr ""
+
+#: Template/ExpectedAnswers/view.ctp:39
+#: Template/Steps/view.ctp:109
+msgid "Related Opened Questions"
+msgstr ""
+
+#: Template/ExpectedAnswers/view.ctp:45
+#: Template/OpenedQuestions/view.ctp:45
+#: Template/Paths/view.ctp:45
+#: Template/Steps/view.ctp:115
+#: Template/Tries/view.ctp:138
+msgid "Notes"
+msgstr ""
+
+#: Template/ExpectedAnswers/view.ctp:48
+#: Template/Steps/view.ctp:118
+msgid "Expected Answer Id"
+msgstr ""
+
+#: Template/Groups/add.ctp:13
+msgid "Add Group"
+msgstr ""
+
+#: Template/Groups/edit.ctp:11
+msgid "Edit Class"
+msgstr ""
+
+#: Template/Groups/index.ctp:10
+#: Template/Groups/view.ctp:13
+#: Template/Topics/add.ctp:11
+#: Template/Topics/index.ctp:12
+#: Template/Users/add.ctp:13
+#: Template/Users/change_password.ctp:19
+#: Template/Users/edit.ctp:19
+#: Template/Users/index.ctp:14
+msgid "New Group"
+msgstr ""
+
+#: Template/Groups/index.ctp:13
+#: Template/Groups/view.ctp:16
+#: Template/Links/add.ctp:12
+#: Template/Links/edit.ctp:18
+#: Template/Links/index.ctp:13
+#: Template/Links/view.ctp:16
+#: Template/Paths/add.ctp:16
+#: Template/Paths/index.ctp:17
+#: Template/Paths/view.ctp:20
+#: Template/Tries/add.ctp:10
+#: Template/Tries/edit.ctp:16
+#: Template/Tries/index.ctp:11
+#: Template/Tries/view.ctp:14
+#: Template/Users/add.ctp:9
+#: Template/Users/change_password.ctp:15
+#: Template/Users/edit.ctp:15
+msgid "List Users"
+msgstr ""
+
+#: Template/Groups/index.ctp:14
+#: Template/Groups/view.ctp:17
+#: Template/Links/add.ctp:13
+#: Template/Links/edit.ctp:19
+#: Template/Links/index.ctp:14
+#: Template/Links/view.ctp:17
+#: Template/Paths/add.ctp:17
+#: Template/Paths/index.ctp:18
+#: Template/Paths/view.ctp:21
+#: Template/Tries/add.ctp:11
+#: Template/Tries/edit.ctp:17
+#: Template/Tries/index.ctp:12
+#: Template/Tries/view.ctp:15
+#: Template/Users/index.ctp:10
+msgid "New User"
+msgstr ""
+
+#: Template/Groups/index.ctp:18
+msgid "Groups"
+msgstr ""
+
+#: Template/Groups/index_admin.ctp:7
+msgid "Add an Administrator"
+msgstr ""
+
+#: Template/Groups/index_admin.ctp:10
+#: Template/Groups/index_students.ctp:7
+#: Template/Groups/index_teachers.ctp:11
+#: Template/Groups/view.ctp:66
+#: Template/Groups/view_classes.ctp:12
+#: Template/Links/view.ctp:76
+#: Template/Paths/view.ctp:134
+msgid "Related Users"
+msgstr ""
+
+#: Template/Groups/index_admin.ctp:14
+#: Template/Links/view.ctp:81
+#: Template/Paths/view.ctp:139
+#: Template/Users/view.ctp:11
+#: Template/Users/view_profile.ctp:17
+msgid "Username"
+msgstr ""
+
+#: Template/Groups/index_admin.ctp:16
+#: Template/Groups/index_students.ctp:15
+#: Template/Groups/index_teachers.ctp:16
+#: Template/Links/view.ctp:84
+#: Template/Paths/view.ctp:142
+#: Template/Users/view.ctp:19
+#: Template/Users/view_profile.ctp:25
+msgid "Firstname"
+msgstr ""
+
+#: Template/Groups/index_admin.ctp:30
+#: Template/Groups/index_students.ctp:28
+#: Template/Groups/index_teachers.ctp:29
+msgid "Are you sure you want to delete # {0} {1}?"
+msgstr ""
+
+#: Template/Groups/index_classes.ctp:9
+msgid "Classes"
+msgstr ""
+
+#: Template/Groups/index_classes.ctp:10
+msgid "Add Class (group in physical class)"
+msgstr ""
+
+#: Template/Groups/index_students.ctp:9
+msgid "Add a Student"
+msgstr ""
+
+#: Template/Groups/index_teachers.ctp:8
+msgid "Add a Teacher"
+msgstr ""
+
+#: Template/Groups/view.ctp:10
+msgid "Edit Group"
+msgstr ""
+
+#: Template/Groups/view.ctp:11
+msgid "Delete Group"
+msgstr ""
+
+#: Template/Groups/view.ctp:12
+#: Template/Topics/add.ctp:10
+#: Template/Topics/index.ctp:11
+#: Template/Users/add.ctp:12
+#: Template/Users/change_password.ctp:18
+#: Template/Users/edit.ctp:18
+#: Template/Users/index.ctp:13
+msgid "List Groups"
+msgstr ""
+
+#: Template/Groups/view.ctp:32
+msgid "Is Deletable"
+msgstr ""
+
+#: Template/Groups/view.ctp:33
+#: Template/Steps/view.ctp:49
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:133
+msgid "Yes"
+msgstr ""
+
+#: Template/Groups/view.ctp:33
+#: Template/Steps/view.ctp:49
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:133
+msgid "No"
+msgstr ""
+
+#: Template/Groups/view.ctp:37
+msgid "Related Topics"
+msgstr ""
+
+#: Template/Groups/view.ctp:45
+msgid "Usersid"
+msgstr ""
+
+#: Template/Groups/view.ctp:72
+msgid "Fistname"
+msgstr ""
+
+#: Template/Groups/view.ctp:73
+#: Template/Links/view.ctp:85
+#: Template/Paths/view.ctp:143
+#: Template/Users/view_profile.ctp:29
+msgid "Avatar"
+msgstr ""
+
+#: Template/Groups/view.ctp:74
+msgid "Pseudo"
+msgstr ""
+
+#: Template/Groups/view.ctp:75
+#: Template/Links/view.ctp:87
+#: Template/Paths/view.ctp:145
+#: Template/Users/view.ctp:27
+#: Template/Users/view_profile.ctp:37
+msgid "Email"
+msgstr ""
+
+#: Template/Groups/view.ctp:76
+#: Template/Links/view.ctp:82
+#: Template/Paths/view.ctp:140
+msgid "Password"
+msgstr ""
+
+#: Template/Installers/step_four.ctp:40
+msgid "Add Link to courses."
+msgstr ""
+
+#: Template/Installers/step_one.ctp:93
+#: Template/Installers/step_two.ctp:47
+msgid "Actualize"
+msgstr ""
+
+#: Template/Installers/step_three.ctp:39
+#: Template/Users/add_admin.ctp:9
+msgid "Add Admin"
+msgstr ""
+
+#: Template/Layout/default.ctp:16
+#: Template/Layout/installer.ctp:16
+msgid "Remasco "
+msgstr ""
+
+#: Template/Layout/error.ctp:35
+msgid "Error"
+msgstr ""
+
+#: Template/Layout/error.ctp:43
+msgid "Back"
+msgstr ""
+
+#: Template/Links/add.ctp:9
+#: Template/Links/edit.ctp:15
+#: Template/Links/view.ctp:12
+#: Template/Steps/add.ctp:12
+#: Template/Steps/edit.ctp:18
+#: Template/Steps/index.ctp:13
+#: Template/Steps/view.ctp:16
+msgid "List Links"
+msgstr ""
+
+#: Template/Links/add.ctp:10
+#: Template/Links/edit.ctp:16
+#: Template/Links/index.ctp:11
+#: Template/Links/view.ctp:14
+#: Template/MultipleChoiceQuestions/add.ctp:12
+#: Template/MultipleChoiceQuestions/edit.ctp:18
+#: Template/MultipleChoiceQuestions/index.ctp:13
+#: Template/MultipleChoiceQuestions/view.ctp:16
+#: Template/OpenedQuestions/add.ctp:12
+#: Template/OpenedQuestions/edit.ctp:18
+#: Template/OpenedQuestions/index.ctp:13
+#: Template/OpenedQuestions/view.ctp:16
+#: Template/Paths/add.ctp:10
+#: Template/Paths/index.ctp:11
+#: Template/Paths/view.ctp:14
+#: Template/Steps/add.ctp:9
+#: Template/Steps/edit.ctp:15
+#: Template/Steps/view.ctp:12
+msgid "List Steps"
+msgstr ""
+
+#: Template/Links/add.ctp:11
+#: Template/Links/edit.ctp:17
+#: Template/Links/index.ctp:12
+#: Template/Links/view.ctp:15
+#: Template/MultipleChoiceQuestions/add.ctp:13
+#: Template/MultipleChoiceQuestions/edit.ctp:19
+#: Template/MultipleChoiceQuestions/index.ctp:14
+#: Template/MultipleChoiceQuestions/view.ctp:17
+#: Template/OpenedQuestions/add.ctp:13
+#: Template/OpenedQuestions/edit.ctp:19
+#: Template/OpenedQuestions/index.ctp:14
+#: Template/OpenedQuestions/view.ctp:17
+#: Template/Paths/add.ctp:11
+#: Template/Paths/index.ctp:12
+#: Template/Paths/view.ctp:15
+#: Template/Steps/index.ctp:10
+#: Template/Steps/view.ctp:13
+msgid "New Step"
+msgstr ""
+
+#: Template/Links/add.ctp:19
+#: Template/Links/add_links.ctp:9
+msgid "Add Link"
+msgstr ""
+
+#: Template/Links/edit.ctp:25
+#: Template/Links/view.ctp:10
+msgid "Edit Link"
+msgstr ""
+
+#: Template/Links/index.ctp:10
+#: Template/Links/index_links.ctp:10
+#: Template/Links/view.ctp:13
+#: Template/Steps/add.ctp:13
+#: Template/Steps/edit.ctp:19
+#: Template/Steps/index.ctp:14
+#: Template/Steps/view.ctp:17
+msgid "New Link"
+msgstr ""
+
+#: Template/Links/index.ctp:18
+#: Template/Links/index_links.ctp:9
+msgid "Links"
+msgstr ""
+
+#: Template/Links/view.ctp:11
+msgid "Delete Link"
+msgstr ""
+
+#: Template/Links/view.ctp:32
+#: Template/Steps/view.ctp:59
+msgid "Url"
+msgstr ""
+
+#: Template/Links/view.ctp:45
+#: Template/MultipleChoiceQuestions/view.ctp:72
+#: Template/OpenedQuestions/view.ctp:49
+#: Template/Paths/view.ctp:49
+msgid "Related Steps"
+msgstr ""
+
+#: Template/Links/view.ctp:50
+#: Template/MultipleChoiceQuestions/view.ctp:78
+#: Template/OpenedQuestions/view.ctp:55
+#: Template/Paths/view.ctp:54
+msgid "Path Id"
+msgstr ""
+
+#: Template/Links/view.ctp:51
+#: Template/MultipleChoiceQuestions/view.ctp:79
+#: Template/OpenedQuestions/view.ctp:56
+#: Template/Paths/view.ctp:55
+#: Template/Steps/view.ctp:48
+msgid "Lock"
+msgstr ""
+
+#: Template/Links/view.ctp:54
+#: Template/MultipleChoiceQuestions/view.ctp:77
+#: Template/OpenedQuestions/view.ctp:54
+#: Template/Paths/view.ctp:58
+#: Template/Steps/view.ctp:36
+msgid "Number"
+msgstr ""
+
+#: Template/Links/view.ctp:83
+#: Template/Paths/view.ctp:141
+#: Template/Users/view.ctp:15
+#: Template/Users/view_profile.ctp:21
+msgid "Lastname"
+msgstr ""
+
+#: Template/Links/view.ctp:86
+#: Template/Paths/view.ctp:144
+#: Template/Users/view.ctp:23
+#: Template/Users/view_profile.ctp:33
+msgid "Display Name"
+msgstr ""
+
+#: Template/MultipleChoiceQuestions/add.ctp:9
+#: Template/MultipleChoiceQuestions/edit.ctp:15
+#: Template/MultipleChoiceQuestions/view.ctp:12
+#: Template/Questions/add.ctp:14
+#: Template/Questions/edit.ctp:20
+#: Template/Questions/index.ctp:15
+#: Template/Questions/view.ctp:18
+#: Template/Steps/add.ctp:14
+#: Template/Steps/edit.ctp:20
+#: Template/Steps/index.ctp:15
+#: Template/Steps/view.ctp:18
+#: Template/Tries/add.ctp:14
+#: Template/Tries/edit.ctp:20
+#: Template/Tries/index.ctp:15
+#: Template/Tries/view.ctp:18
+msgid "List Multiple Choice Questions"
+msgstr ""
+
+#: Template/MultipleChoiceQuestions/add.ctp:14
+#: Template/MultipleChoiceQuestions/edit.ctp:20
+#: Template/MultipleChoiceQuestions/index.ctp:15
+#: Template/MultipleChoiceQuestions/view.ctp:18
+#: Template/Paths/add.ctp:14
+#: Template/Paths/index.ctp:15
+#: Template/Paths/view.ctp:18
+#: Template/Questions/add.ctp:12
+#: Template/Questions/edit.ctp:18
+#: Template/Questions/index.ctp:13
+#: Template/Questions/view.ctp:16
+#: Template/Tries/add.ctp:9
+#: Template/Tries/edit.ctp:15
+#: Template/Tries/view.ctp:12
+#: Template/Users/add.ctp:10
+#: Template/Users/change_password.ctp:16
+#: Template/Users/edit.ctp:16
+#: Template/Users/index.ctp:11
+msgid "List Tries"
+msgstr ""
+
+#: Template/MultipleChoiceQuestions/add.ctp:15
+#: Template/MultipleChoiceQuestions/edit.ctp:21
+#: Template/MultipleChoiceQuestions/index.ctp:16
+#: Template/MultipleChoiceQuestions/view.ctp:19
+#: Template/Paths/add.ctp:15
+#: Template/Paths/index.ctp:16
+#: Template/Paths/view.ctp:19
+#: Template/Questions/add.ctp:13
+#: Template/Questions/edit.ctp:19
+#: Template/Questions/index.ctp:14
+#: Template/Questions/view.ctp:17
+#: Template/Tries/index.ctp:10
+#: Template/Tries/view.ctp:13
+#: Template/Users/add.ctp:11
+#: Template/Users/change_password.ctp:17
+#: Template/Users/edit.ctp:17
+#: Template/Users/index.ctp:12
+msgid "New Try"
+msgstr ""
+
+#: Template/MultipleChoiceQuestions/add.ctp:21
+msgid "Add Multiple Choice Question"
+msgstr ""
+
+#: Template/MultipleChoiceQuestions/edit.ctp:27
+#: Template/MultipleChoiceQuestions/view.ctp:10
+msgid "Edit Multiple Choice Question"
+msgstr ""
+
+#: Template/MultipleChoiceQuestions/index.ctp:10
+#: Template/MultipleChoiceQuestions/view.ctp:13
+#: Template/Questions/add.ctp:15
+#: Template/Questions/edit.ctp:21
+#: Template/Questions/index.ctp:16
+#: Template/Questions/view.ctp:19
+#: Template/Steps/add.ctp:15
+#: Template/Steps/edit.ctp:21
+#: Template/Steps/index.ctp:16
+#: Template/Steps/view.ctp:19
+#: Template/Tries/add.ctp:15
+#: Template/Tries/edit.ctp:21
+#: Template/Tries/index.ctp:16
+#: Template/Tries/view.ctp:19
+msgid "New Multiple Choice Question"
+msgstr ""
+
+#: Template/MultipleChoiceQuestions/index.ctp:20
+msgid "Multiple Choice Questions"
+msgstr ""
+
+#: Template/MultipleChoiceQuestions/view.ctp:11
+msgid "Delete Multiple Choice Question"
+msgstr ""
+
+#: Template/MultipleChoiceQuestions/view.ctp:103
+#: Template/Paths/view.ctp:107
+#: Template/Questions/view.ctp:76
+msgid "Related Tries"
+msgstr ""
+
+#: Template/MultipleChoiceQuestions/view.ctp:110
+#: Template/Paths/view.ctp:114
+#: Template/Questions/view.ctp:83
+msgid "User Id"
+msgstr ""
+
+#: Template/OpenedQuestions/add.ctp:19
+msgid "Add Opened Question"
+msgstr ""
+
+#: Template/OpenedQuestions/edit.ctp:25
+#: Template/OpenedQuestions/view.ctp:10
+msgid "Edit Opened Question"
+msgstr ""
+
+#: Template/OpenedQuestions/index.ctp:18
+msgid "Opened Questions"
+msgstr ""
+
+#: Template/OpenedQuestions/view.ctp:11
+msgid "Delete Opened Question"
+msgstr ""
+
+#: Template/OpenedQuestions/view.ctp:28
+msgid "Expected Answer"
+msgstr ""
+
+#: Template/Paths/add.ctp:23
+#: Template/Paths/addfrom.ctp:10
+msgid "Add Path"
+msgstr ""
+
+#: Template/Paths/index.ctp:22
+msgid "Paths"
+msgstr ""
+
+#: Template/Paths/view.ctp:11
+msgid "Delete Path"
+msgstr ""
+
+#: Template/Paths/view.ctp:80
+#: Template/Topics/view.ctp:29
+#: Template/Topics/view_users.ctp:31
+msgid "Related Chapters"
+msgstr ""
+
+#: Template/Questions/add.ctp:21
+msgid "Add Question"
+msgstr ""
+
+#: Template/Questions/edit.ctp:27
+#: Template/Questions/view.ctp:10
+msgid "Edit Question"
+msgstr ""
+
+#: Template/Questions/index.ctp:20
+msgid "Questions"
+msgstr ""
+
+#: Template/Questions/view.ctp:11
+msgid "Delete Question"
+msgstr ""
+
+#: Template/Questions/view.ctp:47
+msgid "Related Answers"
+msgstr ""
+
+#: Template/Questions/view.ctp:103
+#: Template/Steps/view.ctp:82
+#: Template/Tries/view.ctp:76
+msgid "Related Multiple Choice Questions"
+msgstr ""
+
+#: Template/Steps/edit.ctp:29
+#: Template/Steps/view.ctp:10
+msgid "Edit Step"
+msgstr ""
+
+#: Template/Steps/index.ctp:22
+msgid "Steps"
+msgstr ""
+
+#: Template/Steps/view.ctp:11
+msgid "Delete Step"
+msgstr ""
+
+#: Template/Steps/view.ctp:32
+msgid "Path"
+msgstr ""
+
+#: Template/Steps/view.ctp:53
+msgid "Related Links"
+msgstr ""
+
+#: Template/Topics/add.ctp:19
+#: Template/Topics/add_topic.ctp:10
+msgid "Add Topic"
+msgstr ""
+
+#: Template/Topics/edit.ctp:10
+msgid "Edit Topic"
+msgstr ""
+
+#: Template/Topics/index.ctp:18
+#: Template/Topics/index_students.ctp:9
+#: Template/Topics/index_teachers.ctp:9
+msgid "Topics"
+msgstr ""
+
+#: Template/Topics/index_teachers.ctp:11
+msgid "Add a Topic"
+msgstr ""
+
+#: Template/Topics/view.ctp:12
+msgid "Edit, change groups (classes) assign"
+msgstr ""
+
+#: Template/Topics/view.ctp:47
+msgid "Add a chapter"
+msgstr ""
+
+#: Template/Topics/view.ctp:51
+msgid "Classes assign"
+msgstr ""
+
+#: Template/Tries/add.ctp:12
+#: Template/Tries/edit.ctp:18
+#: Template/Tries/index.ctp:13
+#: Template/Tries/view.ctp:16
+msgid "List Answers Questions"
+msgstr ""
+
+#: Template/Tries/add.ctp:13
+#: Template/Tries/edit.ctp:19
+#: Template/Tries/index.ctp:14
+#: Template/Tries/view.ctp:17
+msgid "New Answers Question"
+msgstr ""
+
+#: Template/Tries/add.ctp:25
+msgid "Add Try"
+msgstr ""
+
+#: Template/Tries/edit.ctp:31
+#: Template/Tries/view.ctp:10
+msgid "Edit Try"
+msgstr ""
+
+#: Template/Tries/index.ctp:24
+msgid "Tries"
+msgstr ""
+
+#: Template/Tries/view.ctp:11
+msgid "Delete Try"
+msgstr ""
+
+#: Template/Tries/view.ctp:34
+msgid "User"
+msgstr ""
+
+#: Template/Tries/view.ctp:47
+msgid "Related Answers Questions"
+msgstr ""
+
+#: Template/Tries/view.ctp:51
+msgid "Answer Id"
+msgstr ""
+
+#: Template/Tries/view.ctp:53
+msgid "Position"
+msgstr ""
+
+#: Template/Users/add.ctp:23
+msgid "Add User"
+msgstr ""
+
+#: Template/Users/add_student.ctp:9
+msgid "Add Student"
+msgstr ""
+
+#: Template/Users/add_teacher.ctp:9
+msgid "Add Teacher"
+msgstr ""
+
+#: Template/Users/change_password.ctp:27
+#: Template/Users/edit.ctp:29
+#: Template/Users/edit_profile.ctp:10
+msgid "Edit User"
+msgstr ""
+
+#: Template/Users/index.ctp:22
+msgid "Users"
+msgstr ""
+
+#: Template/Users/login.ctp:12;25
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/login.ctp:29
+msgid "Login"
+msgstr ""
+
+#: Template/Users/login.ctp:17
+msgid "Please enter your username and password to access to your private space"
+msgstr ""
+
+#: Template/Users/view_profile.ctp:41
+msgid "Edit my Profile"
+msgstr ""
+
+#: Template/Users/view_profile.ctp:42
+msgid "Change my password"
+msgstr ""
+
+#: Template/Users/view_profile.ctp:45
+msgid "Related Groups"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Element/form.ctp:39
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:67
+msgid "List <%= $pluralHumanName %>"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Element/form.ctp:46
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:51
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:75
+msgid "List <%= $this->_pluralHumanName($alias) %>"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Element/form.ctp:47
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:52
+msgid "New <%= $this->_singularHumanName($alias) %>"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Element/form.ctp:59
+msgid "<%= Inflector::humanize($action) %> <%= $singularHumanName %>"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:44
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:68
+msgid "New <%= $singularHumanName %>"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/index.ctp:62
+msgid "<%= $pluralHumanName %>"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/login.ctp:25
+msgid "Please enter your username and password"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:65
+msgid "Edit <%= $singularHumanName %>"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:66
+msgid "Delete <%= $singularHumanName %>"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:76
+msgid "New <%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:94
+msgid "<%= Inflector::humanize($details["
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:99;116;132;141;158
+msgid "<%= Inflector::humanize($field) %>"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:108
+msgid "<%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>"
+msgstr ""
+
+#: /home/jerome/www-dev/private/remasco/remasco_test/vendor/cakephp/bake/src/Template/Bake/Template/view.ctp:153
+msgid "Related <%= $otherPluralHumanName %>"
+msgstr ""
+
