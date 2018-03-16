@@ -46,7 +46,7 @@ class InstallersController extends AppController
             if($migrations->seed()){
                $this->Flash->success(__('The database is now populated.')); 
             }else{
-               $this->Flash->success(__('The database couldn’t be populize.')); 
+               $this->Flash->success(__('The database couldn’t be populated.')); 
             }
 
         }else{
