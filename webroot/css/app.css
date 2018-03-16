@@ -1,3 +1,27 @@
+button, .button {
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0;
+    cursor: pointer;
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 0 1.25rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1rem 2rem 1.0625rem 2rem;
+    font-size: 1rem;
+    background-color: #008CBA;
+    border-color: #007095;
+    color: #fff;
+    transition: background-color 300ms ease-out;
+}
+
 //.container 
 
 //.clearfix
@@ -11,7 +35,7 @@
 //related
 
 
-
+/**
 .actions.columns {
     margin-top:1rem;
     border-left: 5px solid #15848F;
@@ -33,3 +57,4 @@
     height: 3.5rem;
 }
 
+*/

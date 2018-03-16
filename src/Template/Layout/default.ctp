@@ -31,7 +31,7 @@ $cakeDescription = __('Remasco ');
     <?php echo $this->Html->css('vendor/foundation.css') ?>
     <?php echo $this->Html->css('vendor/foundation.min.css') ?>
     <?php echo $this->Html->css('cake.css') ?>
-    <?php //echo $this->Html->css('app.css') ?>
+    <?php echo $this->Html->css('app.css') ?>
     <?php echo $this->Html->css('menu.css') ?>
 
 
