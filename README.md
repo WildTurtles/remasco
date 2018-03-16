@@ -9,7 +9,10 @@ There is several issues.
 2. Some part of code should be move from controller to model.
 3. No Database prefixes support.
 4. No Unit or others kind of test.
-5. No Release (Tag)
+5. No stable Release, only an alpha
+
+Feel free to contact me for issues. 
+
 
 ## Requirement, if you want test it
 - A Database
@@ -52,7 +55,7 @@ I also advice to you to check the [cakephp deployement documentation](https://bo
 ## Configuration
 
 ### Set up
-You have to edit the config/app.php file in order to edit database section. 
+You have to edit the config/app.php file in order to edit database section and language section (en or fr). 
 
 When it’s done you can use the online installer with your privacy compliant favorite web-browser.
 Go to : https://domain-name.org/remasco if you execute git on the web server root directory.
@@ -69,8 +72,6 @@ If the installer stop with a permission issue you should add the write right to 
 
 After that the installation is finich and you can sign in the remasco application.
 
-Feel free to contact me for issues. 
-
 ### Reset the installation
 
 If you want to reset your installation just drop your database schema (dump your data before if needed).
@@ -86,6 +87,76 @@ return array (
 );
 ```
 And redo the Set Up part.
+
+
+## Populate 
+
+When your application is setup you can populate it.
+
+### Admin 
+Use your admin account to create users (teachers and students).
+
+When it’s done now it's teachers time.
+
+### Teachers 
+
+Use your username and your password to sign in.
+
+You now have to create your students groups, topics, and courses step.
+
+#### Students Groups 
+
+Use the "class list" menu entry to show all your students groups.
+Use the "Add class" button (on class list page) to create a new group.
+
+A student group could not be edit so be sure all students you need are selected (ctrl + left click) and submit the form.
+
+
+#### Links, Topics, Chapters, Path and Steps
+
+The app should be use with links to one step in a course.
+Let's me show you :
+
+--> Topics 1 
+----> Chapter 1
+------> Path 1
+--------> Step 1 --> a link to a wiki page  
+--------> Step 2 --> a link to a wiki page 
+------> Path 2
+--------> Step 1 --> a link to a wiki page  
+--------> Step 2 --> a link to a wiki page 
+----> Chapter 2 
+------> Path 1
+--------> Step 1 --> a link to a wiki page 
+--------> Step 2 --> a link to a wiki page
+--------> Step 3 --> a link to a wiki page   
+----> Chapter 3 
+------> Path 1
+--------> Step 1 --> a link to a wiki page 
+------> Path 2
+--------> Step 1 --> a link to a wiki page 
+--------> Step 2 --> a link to a wiki page 
+
+
+So the first thing you need to do is add links in the application.
+
+Use the "Courses links list" and the "New Link" link to add a new link.
+Again it can not be edit be sure of your content. 
+
+Now let’s create your Topic 
+
+Use the "Topic list" menu entry and the "Add Topic" link.
+You have to choose which group will use your topic.
+
+Now you can click on your topic name on the "Topic list" page.
+On your topic page you can add a chapter and first choose it’s name.
+Click on it name to show all path and add a new one (Add path link).
+
+When your adding a path you can select which students will follow this path.
+
+When it’s done you can add a step, a step need a link and can be lock. If it’s lock students will have to "finish" the step before.
+
+And it’s done you know how to create your courses. It’s look like it’s hard but it is not when you will master it you will show how powerfull this tool is.
 
 # Original Cakephp Readme
 
